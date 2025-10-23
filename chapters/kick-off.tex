@@ -8,49 +8,50 @@
 
 \section{Analisi preventiva dei rischi}
 
-Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si potrà andare incontro.
-Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
+Durante la fase iniziale di analisi sono stati identificati i principali rischi potenziali connessi al progetto, classificati per ambito (tecnico, di progetto e infrastrutturale) e priorizzati in base all'impatto e alla probabilità. Per ciascun rischio è stato predisposto un piano di mitigazione che definisce azioni concrete, tempistiche e responsabilità precise.
+
+Le contromisure prevedono attività di sperimentazione controllata degli strumenti, revisioni manuali dei risultati, integrazione e test in ambienti rappresentativi, oltre a piani di escalation per le criticità più gravi. È inoltre prevista una procedura di monitoraggio continuo e revisione periodica delle valutazioni e delle soluzioni adottate, in modo da aggiornare rapidamente le contromisure alla luce di nuovi dati o evoluzioni tecnologiche.
 
 \subsection{Rischi tecnici}
 
 \begin{risk}{Complessità nell'applicare strumenti di security testing ad AI generativa (tool immaturi o
 non sempre affidabili).}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \riskdescription{Le difficoltà nell'adattare i tool di security testing all'AI generativa possono derivare dalla loro immaturità o dalla mancanza di affidabilità}
+    \risksolution{Una lunga fase di sperimentazione e testing dei tool mitigherà i rischi, garantendo risultati affidabili}
 \end{risk}
 
 \begin{risk}{Possibili falsi positivi o negativi nei test di vulnerabilità.}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \riskdescription{I test di vulnerabilità potrebbero generare risultati inaccurati, con falsi positivi (segnalazioni errate di vulnerabilità) o falsi negativi (mancata rilevazione di vulnerabilità reali)}
+    \risksolution{Implementare una fase di revisione manuale dei risultati dei test per convalidare le segnalazioni e ridurre il rischio di falsi positivi e negativi}
 \end{risk}
 
 \begin{risk}{Difficoltà di integrazione dei tool con codice reale e pipeline di sviluppo.}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \riskdescription{Le difficoltà di integrazione possono derivare da incompatibilità tra i tool di testing e l'infrastruttura esistente, nonché dalla complessità del codice reale su cui si stanno eseguendo i test}
+    \risksolution{Collaborare con gli sviluppatori del codice reale per garantire che i tool di testing siano compatibili con l'infrastruttura esistente e fornire supporto durante l'integrazione}
 \end{risk}
 
 \subsection{Rischi di progetto}
 
 \begin{risk}{Mancanza di esperienza pregressa su OWASP o sicurezza AI.}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \riskdescription{La poca familiarità con le best practices di OWASP o con le specificità della sicurezza nell'AI generativa potrebbe rallentare l'avanzamento del progetto}
+    \risksolution{Studio e formazione con risorse adeguate per aumentare la familiarità con OWASP e la sicurezza dell'AI generativa}
 \end{risk}
 
 \begin{risk}{Possibile difficoltà a rispettare la pianificazione a causa della curva di apprendimento iniziale.}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \riskdescription{La curva di apprendimento iniziale per l'utilizzo di nuovi strumenti e tecnologie potrebbe richiedere più tempo del previsto, influenzando la pianificazione del progetto}
+    \risksolution{Pianificare margini di tempo aggiuntivi per la formazione e l'adattamento agli strumenti, nonché monitorare attentamente i progressi}
 \end{risk}
 
 \subsection{Rischi infrastrutturali}
 
 \begin{risk}{Limitazioni di risorse computazionali nei test di AI.}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \riskdescription{Le risorse computazionali disponibili per l'esecuzione dei test di AI potrebbero non essere sufficienti, causando rallentamenti o interruzioni nei test}
+    \risksolution{Ottimizzare l'uso delle risorse disponibili e, se necessario, richiedere l'accesso a risorse computazionali aggiuntive}
 \end{risk}
 
 \begin{risk}{Problemi di compatibilità con ambienti cloud o di deployment.}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+    \riskdescription{Le differenze tra gli ambienti di sviluppo e produzione potrebbero causare problemi di compatibilità, rendendo difficile l'esecuzione dei test in modo uniforme}
+    \risksolution{Testare i tool di testing in ambienti simili a quelli di produzione e documentare eventuali problemi di compatibilità}
 \end{risk}
 
 
