@@ -5,18 +5,107 @@
 
 \section{Introduzione al progetto}
 
+
 \section{Analisi preventiva dei rischi}
 
 Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si potrà andare incontro.
 Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
 
-\begin{risk}{Performance del simulatore hardware}
+\subsection{Rischi tecnici}
+
+\begin{risk}{Complessità nell'applicare strumenti di security testing ad AI generativa (tool immaturi o
+non sempre affidabili).}
     \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
     \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
-    \label{risk:hardware-simulator} 
 \end{risk}
+
+\begin{risk}{Possibili falsi positivi o negativi nei test di vulnerabilità.}
+    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
+    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+\end{risk}
+
+\begin{risk}{Difficoltà di integrazione dei tool con codice reale e pipeline di sviluppo.}
+    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
+    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+\end{risk}
+
+\subsection{Rischi di progetto}
+
+\begin{risk}{Mancanza di esperienza pregressa su OWASP o sicurezza AI.}
+    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
+    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+\end{risk}
+
+\begin{risk}{Possibile difficoltà a rispettare la pianificazione a causa della curva di apprendimento iniziale.}
+    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
+    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+\end{risk}
+
+\subsection{Rischi infrastrutturali}
+
+\begin{risk}{Limitazioni di risorse computazionali nei test di AI.}
+    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
+    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+\end{risk}
+
+\begin{risk}{Problemi di compatibilità con ambienti cloud o di deployment.}
+    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
+    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
+\end{risk}
+
 
 \section{Requisiti e obiettivi}
 
 
+\subsection{Obiettivi obbligatori}
+\begin{itemize}
+\item Valutazione comparativa degli strumenti di analisi.
+\item Applicazione pratica dei test su codice reale.
+\item Prototipo in grado di generare report sulle vulnerabilità AI rispetto a OWASP.
+\item Documentazione tecnica e presentazione finale.
+\end{itemize}
+
+\subsection{Obiettivi desiderabili}
+\begin{itemize}
+\item Dashboard interattiva con visualizzazioni avanzate
+\item Integrazione del prototipo in pipeline CI/CD esistente.
+\item Estensione dei test ad altri framework oltre Gandalf Test.
+\item Raccomandazioni per un framework interno di AI Security by Design.
+\end{itemize}
+
 \section{Pianificazione}
+
+La pianificazione del lavoro di progetto è stata suddivisa in fasi settimanali, con obiettivi specifici per ciascuna fase. Di seguito è riportata una panoramica della pianificazione prevista:
+
+\begin{table}[htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|p{3cm}|p{10cm}|}
+        \hline
+        \textbf{Settimana} & \textbf{Attività} \\
+        \hline
+        Settimana 1 & Studio preliminare su OWASP e rischi AI, overview di Gandalf Test, setup ambiente di
+lavoro.\\
+        \hline
+        Settimana 2 & Analisi comparativa di tool di analisi statica e dinamica (open-source e commerciali).
+Creazione matrice di valutazione.\\
+        \hline
+        Settimana 3 & Applicazione degli strumenti a piccoli progetti demo, valutazione dei risultati e raccolta
+criticità.\\
+        \hline
+        Settimana 4 & Esecuzione dei primi test su componenti reali del team, documentazione dei risultati,
+identificazione vulnerabilità.\\
+        \hline
+        Settimana 5 & Realizzazione di script/report per aggregare risultati, definizione dei KPI di compliance
+OWASP.\\
+        \hline
+        Settimana 6 & Sviluppo di dashboard interattiva per monitorare vulnerabilità e andamento dei test.\\
+        \hline
+        Settimana 7 & Test end-to-end sul prototipo, miglioramento dei tool e dei report.\newline\mbox{}\\
+        \hline
+        Settimana 8 & Redazione di documentazione tecnica, manuale utente e materiale per la presentazione
+della tesi.\\
+        \hline
+    \end{tabular}
+    \caption{Pianificazione delle attività di progetto}
+\end{table}
