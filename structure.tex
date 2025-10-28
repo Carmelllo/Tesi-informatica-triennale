@@ -30,6 +30,10 @@
     \input{appendix/appendice-a}
 
     \backmatter
+    % Ensure all glossary entries are included even if not referenced in the text
+    \glsaddall
+    % Also include all acronyms even if not used explicitly
+    \glsaddall[types=\acronymtype]
     \printglossary[type=\acronymtype, title=Acronimi e abbreviazioni, toctitle=Acronimi e abbreviazioni]
     \printglossary[type=main, title=Glossario, toctitle=Glossario]
 
