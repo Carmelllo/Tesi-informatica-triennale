@@ -1,6 +1,43 @@
-\chapter{Processi e metodologie}
+\chapter{Metodologie di sviluppo del software}
 \label{cap:processi-metodologie}
 
-\intro{Brevissima introduzione al capitolo}\\
+\intro{In questo capitolo viene descritto l'approccio organizzativo adottato per lo stage e come viene pianificato e verificato il lavoro su base settimanale.}
 
-\section{Processo sviluppo prodotto}
+\section{Metodologia adottata}
+\label{sec:metodologia-adottata}
+
+Per lo svolgimento del progetto è stata adottata una metodologia \textbf{iterativo-incrementale} con \textbf{timebox settimanale}. Il tracciamento avviene tramite un elenco di \emph{obiettivi settimanali}, derivati dalla pianificazione riportata nel Capitolo~\ref{cap:descrizione-stage} (sezione Pianificazione).
+\section{Introduzione al modello di sviluppo iterativo-incrementale}
+\subsection{Introduzione}
+Lo sviluppo iterativo-incrementale consiste nel miglioramento continuo del prodotto attraverso cicli ripetuti aggiungendo gradualmente nuove funzionalità a ogni ciclo. Questo approccio consente di adattarsi rapidamente ai cambiamenti dei requisiti e di integrare il feedback degli \emph{stakeholder} in modo tempestivo, migliorando la qualità complessiva del prodotto finale.
+\subsection{Origine}
+Molti esempi di impiego precoce sono riportati nell'articolo di Craig Larman e Victor Basili "Iterative and Incremental Development: A Brief History" \cite{LarmanBasili2003}, tra i quali uno dei più antichi è il Project Mercury della NASA negli anni '60. Alcuni ingegneri coinvolti in Mercury formarono successivamente una divisione dentro IBM; un esempio notevole di successo \gls{iid} in quel contesto fu lo sviluppo del software avionico principale dello Space Shuttle, realizzato tra il 1977 e il 1980 tramite 17 iterazioni in 31 mesi.
+
+Organizzazioni come il Dipartimento della Difesa degli Stati Uniti hanno mostrato una preferenza per metodologie iterative e la \gls{dod} del 2000 esponeva chiaramente una preferenza per un approccio evolutivo/iterativo alla realizzazione delle capacità software: "An evolutionary approach is preferred...". Le revisioni successive di DoDI 5000.02 non menzionano più esplicitamente lo "spiral development", ma sostengono comunque l'approccio iterativo come baseline per programmi software-intensive.
+
+Anche agenzie di sviluppo internazionale, come la United States Agency for International Development (USAID), adottano un approccio iterativo e incrementale nel ciclo di programmazione per progettare, monitorare, valutare, apprendere e adattare i progetti, privilegiando collaborazione, apprendimento e adattamento continuo.
+
+\subsection{Fasi del modello di sviluppo iterativo-incrementale}
+Il modello iterativo-incrementale si articola in diverse fasi principali:
+\begin{itemize}
+\item \textbf {Inception}: identifica l'ambito del progetto, i requisiti (funzionali e non funzionali) e i rischi a un livello elevato, ma con dettagli sufficienti affinché il lavoro possa essere stimato. In questa fase si definiscono il business case, gli stakeholder principali, gli obiettivi di alto livello e i vincoli di progetto; si produce un backlog iniziale e si effettuano stime di massima e una prima analisi dei rischi per decidere il go/no go. I deliverable tipici includono la vision, la lista dei requisiti prioritari, il piano di progetto e il registro dei rischi.
+\item \textbf {Elaboration}: fornisce un'architettura funzionante che mitiga i principali rischi e soddisfa i requisiti non funzionali. Comprende la realizzazione di prototipi o proof of concept per validare scelte architetturali, la definizione della baseline tecnica e delle specifiche non funzionali (performance, sicurezza, scalabilità). In questa fase si aggiornano stime e piani, si dettagliano i criteri di accettazione e si prepara il piano di test per garantire la fattibilità tecnica.
+\item \textbf {Construction}: riempie progressivamente l'architettura con codice pronto per la produzione, prodotto dall'analisi, progettazione, implementazione e test dei requisiti funzionali. È caratterizzata da iterazioni multiple con sviluppo incrementale, integrazione continua, test automatici e revisioni del codice; ogni iterazione produce incrementi rilasciabili, documentazione tecnica aggiornata e attività di refactoring per mantenere la qualità del codice.
+\item \textbf {Transition}: consegna il sistema nell'ambiente operativo di produzione. Include le attività di deploy e migrazione dati, le operazioni di training per gli utenti finali e il supporto iniziale post rilascio, il monitoraggio delle prestazioni e la raccolta dei feedback per eventuali correzioni. I deliverable finali comprendono la documentazione utente, la documentazione di deployment, il registro delle issue risolte e il verbale di acceptance/sign off.
+\end{itemize}
+
+\section{Applicazione del modello iterativo-incrementale nel progetto}
+\subsection{Motivazioni della scelta}
+La scelta del modello iterativo-incrementale per lo svolgimento del progetto di stage è stata immediata e naturale dato che i tutor aziendali adottano tale metodologia con la quale è iniziato lo sviluppo sin dalla prima settimana. IID è particolarmente adatto a contesti in cui i requisiti possono evolvere rapidamente e dove è fondamentale integrare il feedback degli utenti in modo continuo. Poiché il caso di studio del progetto è in continua evoluzione e sviluppo, l'approccio iterativo-incrementale consente di adattarsi rapidamente ai cambiamenti e di migliorare costantemente il prodotto finale.
+
+\subsection{Metodologia operativa adottata}
+
+La cadenza operativa prevede:
+\begin{description}
+    \item[Allineamento settimanale] un unico incontro (30/45 minuti) che combina \emph{review} breve dei risultati ottenuti e \emph{planning} della settimana successiva; durante l'incontro si definisce esplicitamente il \textbf{Goal della settimana}. L'agenda tipica comprende stato degli obiettivi, rischi/impedimenti incontrati, decisioni da prendere e pianificazione dei prossimi passi. L'esito atteso è un goal chiaro, con criteri di accettazione condivisi e una stima realistica in base alla capacità disponibile; se emergono dipendenze o ostacoli, si pianifica subito come rimuoverli o si riduce il perimetro mantenendo il timebox.
+    \item[Supporto] durante la settimana, il tutor aziendale fornisce supporto per sblocchi tecnici e decisioni operative quando necessario. Il confronto avviene tramite brevi sincronizzazioni giornaliere tramite la piattaforma Slack dove ogni giorno si discute su quello che è stato fatto in modo tale da mantenere un allineamento costante e reindirizzare il lavoro se necessario.
+    \item[Incremento] ogni timebox produce un risultato verificabile (es. script/report, esiti di test su codice reale, componente di dashboard, documentazione), tutto ciò viene mostrato al tutor durante l'allineamento settimanale successivo per raccogliere feedback e pianificare i passi successivi.
+\end{description}
+
+La misura dell'avanzamento è basata sul raggiungimento dei \emph{goal settimanali}. Questo approccio consente di ridurre il rischio, incorporare rapidamente i feedback e mantenere la tracciabilità rispetto alla conformità \gls{owaspg}. 
+In caso di scostamenti si adatta il perimetro mantenendo fisso il timebox, privilegiando il soddisfacimento dei requisiti obbligatori. 
