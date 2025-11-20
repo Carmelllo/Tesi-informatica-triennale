@@ -110,19 +110,22 @@ della tesi.\\
     \caption{Pianificazione delle attività di progetto}
 \end{table}
 
-\subsubsection{Settimana 1}
+\subsection{Settimana 1}
+Durante la prima settimana di lavoro il focus è stato posto sullo studio di OWASP e alla comprensione del ambito di studio del progetto. In questo periodo è stata fatta una estensiva ricerca sulla top 10 delle vulnerabilità delle LLM secondo OWASP e dei metodi di testing, attaco e red teaming più comuni ed efficaci in modo tale da avere una visione completa delle problematiche di sicurezza legate all'AI. Essendo l'ambito di studio in continua evoluzione è stato fondamentale raccogliere informazioni sulle tecnologie più recenti e le metodologie attuali per il testing delle vulnerabilità delle LLM. Nei primi giorni della settimana ho avuto modo di provare di persona il gandalf test in modo tale da comprendere a fondo come le LLM possono essere ingannate a rivelare informazioni sensibili (role play, uso di lingua differente, richieste implicite, ecc.). Nell'ultima parte della settimana ho approfondito sul concetto di red teaming e le sue applicazioni pratiche nel contesto delle LLM poichè ho avuto modo di vedere che molti tool di security testing per AI generativa si basano su questa metodologia di attacco. A valle della ricognizione iniziale ho mappato le categorie OWASP più rilevanti ai casi d'uso previsti (prompt injection, disclosure di informazioni sensibili, hallucination e output non sicuri, uso di tool esterni eccessivamente permissivi, data poisoning, differenze tra test in black-box e scenari più informati), cercando di capire come tradurre ciascun rischio in casi di test ripetibili. Ho inoltre analizzato la letteratura più recente (whitepaper, linee guida e report tecnici) per identificare pattern ricorrenti di attacco e difesa e per definire un insieme minimo di metriche di valutazione (riproducibilità del test, tasso di successo del jailbreak, severità dell'impatto, copertura delle categorie OWASP) utile a confrontare approcci manuali e automatizzati.
+
+Sul fronte sperimentale, con il gandalf test ho eseguito più iterazioni variando strategia e contesto per osservare come cambiano le risposte del modello al variare dell'intento e della formulazione (cambio di persona nel role play, ricorso a lingue miste, parafrasi progressive, codifiche/decodifiche semplici, richieste spezzate su più turni, evocazione di autorità fittizie o regole alternative). Ho annotato quali tattiche risultano più efficaci e in quali condizioni falliscono (rate limit, filtri di sicurezza, memoria contestuale), in modo da derivare linee guida utili alla fase di automazione. Ho iniziato anche a delineare il perimetro etico e di compliance, chiarendo i confini del red teaming responsabile e le cautele nella gestione di output potenzialmente sensibili. Questo lavoro preliminare ha permesso di costruire una base metodologica solida, utile per selezionare in modo informato gli strumenti da valutare nelle settimane successive e per impostare una prima matrice di tracciamento tra rischi OWASP, scenari di test e criteri di accettazione.
+
+\subsection{Settimana 2}
+Nel corso della seconda settimana di lavoro l'interesse si è concentrato sull'analisi approfondita delle varie tecnologie e tool esistenti per il testing delle LLM. Ho condotto una ricerca esaustiva per identificare sia soluzioni open-source che commerciali, valutando ciascuna in base a criteri quali facilità d'uso, capacità di integrazione, copertura delle vulnerabilità OWASP, scalabilità e costi associati. Ho creato una matrice di valutazione comparativa (osservabile nel capitolo \ref{cap:progettazione-codifica}, sezione \ref{sec:tecnologie-strumenti}) per sintetizzare i punti di forza e le limitazioni di ogni strumento, facilitando così la selezione dei candidati più promettenti per le fasi successive del progetto. Durante l'analisi, ho esaminato tool come PromptFoo, PyRIT, LangFuse, DeepEval/DeepTeam, Garak, Giskard, Galileo e LakeraGuard, approfondendo le loro funzionalità specifiche per il security testing delle LLM. Ho valutato come ciascuno di questi strumenti affronta le principali categorie di vulnerabilità identificate nella settimana precedente, e ho visionato numerosi talk e conferenze per comprendere al meglio ogni tool sottoposto ad analisi e le loro applicazioni pratiche. Ho creato piccoli script per testare alcune delle funzionalità offerte dai tool, in modo tale da farmi un'idea più precisa delle loro capacità e limitazioni. Al termine della settimana, ho redatto la matrice di valutazione prima citata la quale servirà come base per la selezione degli strumenti da utilizzare nelle fasi successive del progetto, garantendo che le scelte siano informate e allineate agli obiettivi di sicurezza definiti in precedenza.
+\subsection{Settimana 3}
 TBA
-\subsubsection{Settimana 2}
+\subsection{Settimana 4}
 TBA
-\subsubsection{Settimana 3}
+\subsection{Settimana 5}
 TBA
-\subsubsection{Settimana 4}
+\subsection{Settimana 6}
 TBA
-\subsubsection{Settimana 5}
+\subsection{Settimana 7}
 TBA
-\subsubsection{Settimana 6}
-TBA
-\subsubsection{Settimana 7}
-TBA
-\subsubsection{Settimana 8}
+\subsection{Settimana 8}
 TBA
