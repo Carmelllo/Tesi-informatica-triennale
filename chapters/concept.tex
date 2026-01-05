@@ -7,21 +7,260 @@
 
 Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
 I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml}\glsfirstoccur dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
-Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
+
+\begin{usecase}{1}{Visualizzazione dashboard}
+\usecaseactors{Utente}
+\usecasepre{L'utente ha effettuato l'accesso al sistema}
+\usecasedesc{L'utente visualizza la dashboard principale con le statistiche dei test eseguiti sui modelli di intelligenza artificiale generativa.}
+\usecasepost{L'utente ha visualizzato una panoramica dei risultati dei test, inclusi grafici e tabelle riassuntive.}
+\label{uc:uc1}
+\end{usecase}
+
+\begin{usecase}{2}{Visualizzazione statistiche}
+\usecaseactors{Utente}
+\usecasepre{L'utente sta visualizzando la dashboard}
+\usecasedesc{L'utente visualizza le card con le statistiche aggregate dei test eseguiti sui modelli di intelligenza artificiale generativa.}
+\usecasepost{L'utente ha visualizzato le statistiche aggregate dei test eseguiti, come il numero di test superati, il numero di test effettuati e altre metriche rilevanti.}
+\label{uc:uc2}
+\end{usecase}
+
+\begin{usecase}{3}{Visualizzazione grafico temporale}
+\usecaseactors{Utente}
+\usecasepre{L'utente sta visualizzando la dashboard}
+\usecasedesc{L'utente visualizza un grafico temporale con l'andamento dei test eseguiti sui modelli di intelligenza artificiale generativa.}
+\usecasepost{L'utente ha visualizzato il grafico temporale con l'andamento dei test.}
+\label{uc:uc3}
+\end{usecase}
+
+\begin{usecase}{4}{Visualizzazione tabella dei test}
+\usecaseactors{Utente}
+\usecasepre{L'utente sta visualizzando la dashboard}
+\usecasedesc{L'utente visualizza una tabella con i test eseguiti sui target scelti durante la fase di testing}
+\usecasepost{L'utente ha visualizzato la tabella con i test eseguiti sui target scelti durante la fase di testing.}
+\label{uc:uc4}
+\end{usecase}
 
 \begin{figure}[!h] 
     \centering 
-    \includegraphics[width=0.9\columnwidth]{usecase/scenario-principale} 
-    \caption{Use Case - UC0: Scenario principale}
+    \includegraphics[width=\textwidth]{usecase/1-4.png} 
+    \caption{Use Case - UC1 to UC4}
 \end{figure}
 
-\begin{usecase}{0}{Scenario principale}
-\usecaseactors{Sviluppatore applicativi}
-\usecasepre{Lo sviluppatore è entrato nel \emph{plug-in} di simulazione all'interno dell'IDE}
-\usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un \emph{test}}
-\usecasepost{Il sistema è pronto per permettere una nuova interazione}
-\label{uc:scenario-principale}
+\begin{usecase}{5}{Visualizzazione singolo test}
+\usecaseactors{Utente}
+\usecasepre{L'utente ha selezionato un test dalla tabella dei test}
+\usecasedesc{L'utente visualizza le informazioni dettagliate di un singolo test eseguito suil target di riferimento che comprende nome, scorer, dataset, target, status, coverage ed età del test.}
+\usecasepost{L'utente ha visualizzato le informazioni dettagliate del singolo test selezionato.}
+\label{uc:uc5}
 \end{usecase}
+
+\begin{usecase}{6}{Visualizzazione nome test}
+\usecaseactors{Utente}
+\usecasepre{L'utente sta visualizzando un singolo test}
+\usecasedesc{L'utente visualizza il nome assegnato allo specifico test in esame} 
+\usecasepost{L'utente ha visualizzato il nome del test selezionato.}
+\label{uc:uc6}
+\end{usecase}
+
+\begin{usecase}{7}{Visualizzazione scorer test}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc7}
+\end{usecase}
+
+\begin{usecase}{8}{Visualizzazione dataset test}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc8}
+\end{usecase}
+
+\begin{usecase}{9}{Visualizzazione target test}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc9}
+\end{usecase}
+
+\begin{usecase}{10}{Visualizzazione status test}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc10}
+\end{usecase}
+
+\begin{usecase}{11}{Visualizzazione coverage test}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc11}
+\end{usecase}
+
+\begin{usecase}{12}{Visualizzazione età test}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc12}
+\end{usecase}
+
+\begin{usecase}{13}{Visualizzazione Status "Done"}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc13}
+\end{usecase}
+
+\begin{usecase}{14}{Visualizzazione Status "Cancelled"}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc14}
+\end{usecase}
+
+\begin{usecase}{15}{Visualizzazione Status "Failed"}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc15}
+\end{usecase}
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/4-15.png} 
+    \caption{Use Case - UC4 to UC15}
+\end{figure}
+\newpage
+
+\begin{usecase}{16}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc16}
+\end{usecase}
+
+\begin{usecase}{17}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc17}
+\end{usecase}
+
+\begin{usecase}{18}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc18}
+\end{usecase}
+
+\begin{usecase}{19}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc19}
+\end{usecase}
+
+\figure[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/16-19.png} 
+    \caption{Use Case - UC16 to UC19}
+\end{figure}
+
+\begin{usecase}{20}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc20}
+\end{usecase}
+
+\begin{usecase}{21}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc21}
+\end{usecase}
+
+\begin{usecase}{22}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc22}
+\end{usecase}
+
+\begin{usecase}{23}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc23}
+\end{usecase}
+
+\begin{usecase}{24}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc24}
+\end{usecase}
+
+\begin{usecase}{25}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc25}
+\end{usecase}
+
+\begin{usecase}{26}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc26}
+\end{usecase}
+
+\begin{usecase}{27}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc27}
+\end{usecase}
+
+\begin{usecase}{28}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc28}
+\end{usecase}
+
+\begin{usecase}{29}{}
+\usecaseactors{Utente}
+\usecasepre{Precondizione da definire}
+\usecasedesc{Descrizione da definire}
+\usecasepost{Postcondizione da definire}
+\label{uc:uc29}
+\end{usecase}
+
+
+
 
 \section{Tracciamento dei requisiti}
 
