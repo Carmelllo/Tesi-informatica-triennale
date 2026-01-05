@@ -11,11 +11,14 @@
 \newacronym[description={\glslink{cicdg}{Continuous Integration/Continuous Deployment}}]
     {cicd}{CI/CD}{Continuous Integration/Continuous Deployment}
 
-\newacronym[description={Iterative and Incremental Development}]
+\newacronym[description={\glslink{iidg}{Iterative and Incremental Development}}]
     {iid}{IID}{Iterative and Incremental Development}
 
-\newacronym[description={United States Department of Defense}]
+\newacronym[description={\glslink{dodg}{United States Department of Defense}}]
     {dod}{DoD}{Department of Defense}
+
+\newacronym[description={\glslink{erpg}{Enterprise Resource Planning}}]
+    {erp}{ERP}{Enterprise Resource Planning}
 
 % Glossary entries
 \newglossaryentry{apig} {
@@ -32,7 +35,35 @@
     description={in ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ``lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
 }
 
+\newglossaryentry{iidg} {
+    name=\glslink{iid}{IID},
+    text=IID,
+    sort=iid,
+    description={lo sviluppo \emph{Iterative and Incremental Development (IID)} è una metodologia di sviluppo software che combina la progettazione iterativa con un modello incrementale di costruzione. Il prodotto viene sviluppato attraverso cicli ripetuti (iterazioni) e in porzioni più piccole (incrementi), permettendo agli sviluppatori di sfruttare ciò che è stato appreso durante lo sviluppo delle versioni precedenti e di adattarsi ai cambiamenti dei requisiti.}
+}
+
+\newglossaryentry{dodg} {
+    name=\glslink{dod}{DoD},
+    text=DoD,
+    sort=dod,
+    description={il \emph{Department of Defense (DoD)} è il Dipartimento della Difesa degli Stati Uniti d'America, responsabile della sicurezza nazionale e delle forze armate statunitensi. Nel contesto dello sviluppo software, il DoD ha storicamente promosso e standardizzato metodologie di sviluppo iterativo-incrementale per i propri progetti.}
+}
+
+\newglossaryentry{slack} {
+    name={Slack},
+    text={Slack},
+    sort=slack,
+    description={\emph{Slack} è una piattaforma di comunicazione aziendale che offre funzionalità di messaggistica istantanea, canali tematici, condivisione di file e integrazione con altri strumenti di produttività. È ampiamente utilizzata per la collaborazione in team di sviluppo software.}
+}
+
 % Placeholder glossary entries (setup only). Descriptions left as 'Da definire.' to be filled later.
+\newglossaryentry{chatbot}{
+    name={Chatbot},
+    text={chatbot},
+    sort=chatbot,
+    description={un \emph{chatbot} è un programma informatico progettato per simulare una conversazione con utenti umani, tipicamente attraverso interfacce testuali o vocali. I chatbot moderni spesso integrano modelli di intelligenza artificiale generativa per fornire risposte più naturali e contestuali.}
+}
+
 \newglossaryentry{ai-generativa}{
     name={AI generativa},
     text={AI generativa},
@@ -82,6 +113,20 @@
     description={la \emph{allucinazione} si riferisce a un fenomeno in cui un modello di intelligenza artificiale genera output che sono errati, fuorvianti o privi di fondamento nella realtà. Questo può accadere quando il modello interpreta in modo errato l'input o quando i dati di addestramento contengono informazioni imprecise.}
 }
 
+\newglossaryentry{erpg} {
+    name=\glslink{erp}{ERP},
+    text=ERP,
+    sort=erp,
+    description={l'\emph{Enterprise Resource Planning (ERP)} è un sistema software integrato che consente alle aziende di gestire e automatizzare i principali processi di business, come contabilità, gestione delle risorse umane, produzione, supply chain e vendite, attraverso un'unica piattaforma centralizzata.}
+}
+
+\newglossaryentry{guardrail}{
+    name={Guardrail},
+    text={guardrail},
+    sort=guardrail,
+    description={nel contesto dell'intelligenza artificiale, i \emph{guardrail} sono meccanismi di sicurezza e controllo implementati per limitare o prevenire comportamenti indesiderati dei modelli di AI. Includono filtri sui contenuti, limiti sugli argomenti trattabili e sistemi di moderazione automatica delle risposte.}
+}
+
 \newglossaryentry{analisi-statica}{
     name={Analisi statica},
     text={Analisi statica},
@@ -104,10 +149,10 @@
 }
 
 \newglossaryentry{jailbreak}{
-    name={Jailbreak },
-    text={Jailbreak},
+    name={Jailbreak},
+    text={jailbreak},
     sort=jailbreak,
-    description={Da definire.}
+    description={Nel contesto dell'intelligenza artificiale, il \emph{jailbreak} è una tecnica utilizzata per aggirare le restrizioni e i filtri di sicurezza implementati in un modello di linguaggio, inducendolo a generare contenuti che normalmente sarebbero bloccati o censurati.}
 }
 
 \newglossaryentry{cicdg}{
@@ -119,37 +164,30 @@
 
 \newglossaryentry{pipeline}{
     name={Pipeline},
-    text={Pipeline},
+    text={pipeline},
     sort=pipeline,
-    description={Da definire.}
+    description={Una \emph{pipeline} è una sequenza automatizzata di processi o fasi che trasformano un input in un output finale. Nel contesto dello sviluppo software, indica tipicamente l'insieme di operazioni automatiche di build, test e deploy.}
 }
 
 \newglossaryentry{sdk}{
     name={SDK},
     text={SDK},
     sort=sdk,
-    description={Da definire.}
+    description={Un \emph{Software Development Kit (SDK)} è un insieme di strumenti, librerie, documentazione e codice di esempio che consente agli sviluppatori di creare applicazioni per una specifica piattaforma o servizio.}
 }
 
 \newglossaryentry{dashboard}{
     name={Dashboard},
-    text={Dashboard},
+    text={dashboard},
     sort=dashboard,
-    description={Da definire.}
+    description={Una \emph{dashboard} è un'interfaccia grafica che presenta in modo visuale e sintetico informazioni, metriche e indicatori chiave di performance (KPI), permettendo agli utenti di monitorare lo stato di un sistema o processo.}
 }
 
 \newglossaryentry{kpi}{
     name={KPI},
     text={KPI},
     sort=kpi,
-    description={Da definire.}
-}
-
-\newglossaryentry{bias}{
-    name={Bias},
-    text={Bias},
-    sort=bias,
-    description={Da definire.}
+    description={I \emph{Key Performance Indicator (KPI)} sono metriche quantificabili utilizzate per valutare il successo di un'organizzazione, progetto o attività nel raggiungimento degli obiettivi prefissati.}
 }
 
 \newglossaryentry{dataset}{
@@ -168,9 +206,9 @@
 
 \newglossaryentry{token}{
     name={Token},
-    text={Token},
+    text={token},
     sort=token,
-    description={Da definire.}
+    description={Nel contesto dei modelli di linguaggio, un \emph{token} è l'unità minima di testo elaborata dal modello. Può corrispondere a una parola, parte di una parola, un carattere o un simbolo di punteggiatura.}
 }
 
 
@@ -179,70 +217,70 @@
     name={PromptFoo},
     text={PromptFoo},
     sort=promptfoo,
-    description={}
+    description={\emph{PromptFoo} è una piattaforma open source per il testing e la valutazione di modelli di linguaggio, con supporto per test automatizzati, integrazione CI/CD e analisi delle vulnerabilità OWASP per AI generativa.}
 }
 
 \newglossaryentry{pyrit}{
     name={PyRIT},
     text={PyRIT},
     sort=pyrit,
-    description={}
+    description={\emph{PyRIT (Python Risk Identification Tool)} è uno strumento open source sviluppato da Microsoft Azure per l'identificazione e la mitigazione dei rischi di sicurezza nei modelli di intelligenza artificiale generativa.}
 }
 
 \newglossaryentry{langfuse}{
     name={LangFuse},
     text={LangFuse},
     sort=langfuse,
-    description={Da definire.}
+    description={\emph{LangFuse} è una piattaforma open source per l'osservabilità e la valutazione di applicazioni basate su modelli di linguaggio, con funzionalità di tracciamento, analisi e debugging.}
 }
 
 \newglossaryentry{deepeval}{
     name={DeepEval / DeepTeam},
-    text={DeepEval / DeepTeam},
+    text={DeepEval},
     sort=deepeval,
-    description={Da definire.}
+    description={\emph{DeepEval} è un framework open source per la valutazione e il benchmarking di modelli di AI generativa. \emph{DeepTeam} è il relativo strumento di red teaming per testare la sicurezza dei modelli.}
 }
 
 \newglossaryentry{garak}{
     name={Garak},
     text={Garak},
     sort=garak,
-    description={Da definire.}
+    description={\emph{Garak} è uno scanner di vulnerabilità open source sviluppato da NVIDIA per testare modelli di AI generativa, focalizzato su attacchi come prompt injection, jailbreak e data leakage.}
 }
 
 \newglossaryentry{giskard}{
     name={Giskard},
     text={Giskard},
     sort=giskard,
-    description={Da definire.}
+    description={\emph{Giskard} è una piattaforma di red teaming automatizzato per testare e analizzare modelli di AI, disponibile sia come servizio cloud a pagamento che come libreria Python open source.}
 }
 
 \newglossaryentry{galileo}{
     name={Galileo},
     text={Galileo},
     sort=galileo,
-    description={Da definire.}
+    description={\emph{Galileo} è una piattaforma commerciale per la valutazione e l'osservabilità di applicazioni basate su AI generativa, con SDK disponibili in Python e TypeScript.}
 }
 
 \newglossaryentry{lakeraguard}{
     name={LakeraGuard},
     text={LakeraGuard},
     sort=lakeraguard,
-    description={Da definire.}
+    description={\emph{LakeraGuard} è una piattaforma commerciale di sicurezza per modelli di AI sviluppata da Lakera, che offre scansione delle vulnerabilità, monitoraggio delle minacce e protezione in tempo reale.}
 }
 
 \newglossaryentry{use-case}{
     name={Caso d'uso},
-    text={Caso d'uso},
+    text={caso d'uso},
     sort=use-case,
-    description={Da definire.}
+    description={Un \emph{caso d'uso} (o \emph{use case}) è una descrizione di come un utente interagisce con un sistema per raggiungere un obiettivo specifico. Nell'ingegneria del software viene utilizzato per definire i requisiti funzionali.}
 }
 
 \newglossaryentry{matrice-valutazione}{
     name={Matrice di valutazione},
-    text={Matrice di valutazione},
+    text={matrice di valutazione},
     sort=matrice-valutazione,
-    description={Da definire.}
+    description={Una \emph{matrice di valutazione} è uno strumento analitico che permette di confrontare diverse opzioni o alternative sulla base di criteri predefiniti, assegnando punteggi per facilitare la scelta della soluzione migliore.}
 }
 
 \newglossaryentry{prototipo}{
@@ -250,4 +288,46 @@
     text={Prototipo},
     sort=prototipo,
     description={Un \emph{prototipo} è una versione preliminare di un prodotto, utilizzata per testare e convalidare idee, concetti o funzionalità prima dello sviluppo finale. I prototipi possono variare in fedeltà e complessità, da schizzi su carta a modelli interattivi ad alta fedeltà.}
+}
+
+\newglossaryentry{backend}{
+    name={Backend},
+    text={backend},
+    sort=backend,
+    description={Il \emph{backend} è la parte di un'applicazione software che gestisce la logica di business, l'elaborazione dei dati e la comunicazione con il database. Opera lato server e non è direttamente visibile all'utente finale.}
+}
+
+\newglossaryentry{frontend}{
+    name={Frontend},
+    text={frontend},
+    sort=frontend,
+    description={Il \emph{frontend} è la parte di un'applicazione software con cui l'utente interagisce direttamente. Include l'interfaccia utente, il design grafico e tutti gli elementi visuali dell'applicazione.}
+}
+
+\newglossaryentry{saas}{
+    name={SaaS},
+    text={SaaS},
+    sort=saas,
+    description={\emph{Software as a Service (SaaS)} è un modello di distribuzione del software in cui le applicazioni sono ospitate da un provider di servizi e rese disponibili agli utenti tramite Internet, senza necessità di installazione locale.}
+}
+
+\newglossaryentry{data-poisoning}{
+    name={Data poisoning},
+    text={data poisoning},
+    sort=data-poisoning,
+    description={Il \emph{data poisoning} è un tipo di attacco informatico in cui dati malevoli vengono introdotti nel dataset di addestramento di un modello di machine learning per comprometterne il comportamento e le prestazioni.}
+}
+
+\newglossaryentry{black-box}{
+    name={Black-box},
+    text={black-box},
+    sort=black-box,
+    description={Il \emph{testing black-box} è una metodologia di test in cui il tester non ha accesso al codice sorgente o alla struttura interna del sistema. I test vengono eseguiti basandosi esclusivamente sugli input e output del sistema.}
+}
+
+\newglossaryentry{compliance}{
+    name={Compliance},
+    text={compliance},
+    sort=compliance,
+    description={La \emph{compliance} indica la conformità a normative, standard, regolamenti e best practice applicabili a un determinato settore o ambito tecnologico.}
 }

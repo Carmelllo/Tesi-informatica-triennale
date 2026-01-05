@@ -13,26 +13,26 @@ Le contromisure prevedono attività di sperimentazione controllata degli strumen
 
 \subsection{Rischi tecnici}
 
-\begin{risk}{Complessità nell'applicare strumenti di security testing ad AI generativa (tool immaturi o
+\begin{risk}{Complessità nell'applicare strumenti di \emph{security testing} ad AI generativa (\emph{tool} immaturi o
 non sempre affidabili).}
-    \riskdescription{Le difficoltà nell'adattare i tool di security testing all'AI generativa possono derivare dalla loro immaturità o dalla mancanza di affidabilità}
-    \risksolution{Una lunga fase di sperimentazione e testing dei tool ha mitigato i rischi, garantendo risultati affidabili}
+    \riskdescription{Le difficoltà nell'adattare i \emph{tool} di \emph{security testing} all'AI generativa possono derivare dalla loro immaturità o dalla mancanza di affidabilità}
+    \risksolution{Una lunga fase di sperimentazione e \emph{testing} dei \emph{tool} ha mitigato i rischi, garantendo risultati affidabili}
 \end{risk}
 
-\begin{risk}{Possibili falsi positivi o negativi nei test di vulnerabilità.}
-    \riskdescription{I test di vulnerabilità potrebbero generare risultati inaccurati, con falsi positivi (segnalazioni errate di vulnerabilità) o falsi negativi (mancata rilevazione di vulnerabilità reali)}
-    \risksolution{Implementare una fase di revisione manuale dei risultati dei test per convalidare le segnalazioni e ridurre il rischio di falsi positivi e negativi}
+\begin{risk}{Possibili falsi positivi o negativi nei \emph{test} di vulnerabilità.}
+    \riskdescription{I \emph{test} di vulnerabilità potrebbero generare risultati inaccurati, con falsi positivi (segnalazioni errate di vulnerabilità) o falsi negativi (mancata rilevazione di vulnerabilità reali)}
+    \risksolution{Implementare una fase di revisione manuale dei risultati dei \emph{test} per convalidare le segnalazioni e ridurre il rischio di falsi positivi e negativi}
 \end{risk}
 
-\begin{risk}{Difficoltà di integrazione dei tool con codice reale e pipeline di sviluppo.}
-    \riskdescription{Le difficoltà di integrazione possono derivare da incompatibilità tra i tool di testing e l'infrastruttura esistente, nonché dalla complessità del codice reale su cui si stanno eseguendo i test}
-    \risksolution{Collaborare con gli sviluppatori del codice reale per garantire che i tool di testing siano compatibili con l'infrastruttura esistente e fornire supporto durante l'integrazione}
+\begin{risk}{Difficoltà di integrazione dei \emph{tool} con codice reale e \gls{pipeline}\glsfirstoccur di sviluppo.}
+    \riskdescription{Le difficoltà di integrazione possono derivare da incompatibilità tra i \emph{tool} di \emph{testing} e l'infrastruttura esistente, nonché dalla complessità del codice reale su cui si stanno eseguendo i \emph{test}}
+    \risksolution{Collaborare con gli sviluppatori del codice reale per garantire che i \emph{tool} di \emph{testing} siano compatibili con l'infrastruttura esistente e fornire supporto durante l'integrazione}
 \end{risk}
 
 \subsection{Rischi di progetto}
 
 \begin{risk}{Mancanza di esperienza pregressa su OWASP o sicurezza AI.}
-    \riskdescription{La poca familiarità con le best practices di OWASP o con le specificità della sicurezza nell'AI generativa potrebbe rallentare l'avanzamento del progetto}
+    \riskdescription{La poca familiarità con le \emph{best practice} di OWASP o con le specificità della sicurezza nell'AI generativa potrebbe rallentare l'avanzamento del progetto}
     \risksolution{Studio e formazione con risorse adeguate per aumentare la familiarità con OWASP e la sicurezza dell'AI generativa}
 \end{risk}
 
@@ -43,14 +43,14 @@ non sempre affidabili).}
 
 \subsection{Rischi infrastrutturali}
 
-\begin{risk}{Limitazioni di risorse computazionali nei test di AI.}
-    \riskdescription{Le risorse computazionali disponibili per l'esecuzione dei test di AI potrebbero non essere sufficienti, causando rallentamenti o interruzioni nei test}
+\begin{risk}{Limitazioni di risorse computazionali nei \emph{test} di AI.}
+    \riskdescription{Le risorse computazionali disponibili per l'esecuzione dei \emph{test} di AI potrebbero non essere sufficienti, causando rallentamenti o interruzioni nei \emph{test}}
     \risksolution{Ottimizzazione dell'uso delle risorse disponibili e richiesta di accesso a risorse computazionali aggiuntive}
 \end{risk}
 
-\begin{risk}{Problemi di compatibilità con ambienti cloud o di deployment.}
-    \riskdescription{Le differenze tra gli ambienti di sviluppo e produzione potrebbero causare problemi di compatibilità, rendendo difficile l'esecuzione dei test in modo uniforme}
-    \risksolution{Testare i tool di testing in ambienti simili a quelli di produzione e documentazione di eventuali problemi di compatibilità}
+\begin{risk}{Problemi di compatibilità con ambienti \emph{cloud} o di \emph{deployment}.}
+    \riskdescription{Le differenze tra gli ambienti di sviluppo e produzione potrebbero causare problemi di compatibilità, rendendo difficile l'esecuzione dei \emph{test} in modo uniforme}
+    \risksolution{Testare i \emph{tool} di \emph{testing} in ambienti simili a quelli di produzione e documentazione di eventuali problemi di compatibilità}
 \end{risk}
 
 
@@ -67,10 +67,10 @@ non sempre affidabili).}
 
 \subsection{Obiettivi desiderabili}
 \begin{itemize}
-\item Dashboard interattiva con visualizzazioni avanzate
-\item Integrazione del prototipo in pipeline CI/CD esistente.
-\item Estensione dei test ad altri framework oltre Gandalf Test.
-\item Raccomandazioni per un framework interno di AI Security by Design.
+\item \emph{Dashboard} interattiva con visualizzazioni avanzate
+\item Integrazione del prototipo in \emph{pipeline} \gls{cicd}\glsfirstoccur esistente.
+\item Estensione dei \emph{test} ad altri \emph{framework} oltre \gls{gandalf-test}\glsfirstoccur.
+\item Raccomandazioni per un \emph{framework} interno di AI \emph{Security by Design}.
 \end{itemize}
 
 \section{Pianificazione}
@@ -84,24 +84,24 @@ La pianificazione del lavoro di progetto è stata suddivisa in fasi settimanali,
         \hline
         \textbf{Settimana} & \textbf{Attività} \\
         \hline
-        Settimana 1 & Studio preliminare su OWASP e rischi AI, overview di Gandalf Test, setup ambiente di
+        Settimana 1 & Studio preliminare su OWASP e rischi AI, \emph{overview} di \gls{gandalf-test}, \emph{setup} ambiente di
 lavoro.\\
         \hline
-        Settimana 2 & Analisi comparativa di tool di analisi statica e dinamica (open-source e commerciali).
+        Settimana 2 & Analisi comparativa di \emph{tool} di analisi statica e dinamica (\emph{open source} e commerciali).
 Creazione matrice di valutazione.\\
         \hline
-        Settimana 3 & Applicazione degli strumenti a piccoli progetti demo, valutazione dei risultati e raccolta
+        Settimana 3 & Applicazione degli strumenti a piccoli progetti \emph{demo}, valutazione dei risultati e raccolta
 criticità.\\
         \hline
-        Settimana 4 & Esecuzione dei primi test su componenti reali del team, documentazione dei risultati,
+        Settimana 4 & Esecuzione dei primi \emph{test} su componenti reali del \emph{team}, documentazione dei risultati,
 identificazione vulnerabilità.\\
         \hline
-        Settimana 5 & Realizzazione di script/report per aggregare risultati, definizione dei KPI di compliance
+        Settimana 5 & Realizzazione di \emph{script}/\emph{report} per aggregare risultati, definizione dei \gls{kpi}\glsfirstoccur di \emph{compliance}
 OWASP.\\
         \hline
-        Settimana 6 & Sviluppo di dashboard interattiva per monitorare vulnerabilità e andamento dei test.\\
+        Settimana 6 & Sviluppo di \emph{dashboard} interattiva per monitorare vulnerabilità e andamento dei \emph{test}.\\
         \hline
-        Settimana 7 & Test end-to-end sul prototipo, miglioramento dei tool e dei report.\newline\mbox{}\\
+        Settimana 7 & \emph{Test end-to-end} sul prototipo, miglioramento dei \emph{tool} e dei \emph{report}.\newline\mbox{}\\
         \hline
         Settimana 8 & Redazione di documentazione tecnica, manuale utente e materiale per la presentazione
 della tesi.\\
@@ -111,12 +111,12 @@ della tesi.\\
 \end{table}
 
 \subsection{Settimana 1}
-Durante la prima settimana di lavoro il focus è stato posto sullo studio di OWASP e alla comprensione del ambito di studio del progetto. In questo periodo è stata fatta una estensiva ricerca sulla top 10 delle vulnerabilità delle LLM secondo OWASP e dei metodi di testing, attaco e red teaming più comuni ed efficaci in modo tale da avere una visione completa delle problematiche di sicurezza legate all'AI. Essendo l'ambito di studio in continua evoluzione è stato fondamentale raccogliere informazioni sulle tecnologie più recenti e le metodologie attuali per il testing delle vulnerabilità delle LLM. Nei primi giorni della settimana ho avuto modo di provare di persona il gandalf test in modo tale da comprendere a fondo come le LLM possono essere ingannate a rivelare informazioni sensibili (role play, uso di lingua differente, richieste implicite, ecc.). Nell'ultima parte della settimana ho approfondito sul concetto di red teaming e le sue applicazioni pratiche nel contesto delle LLM poichè ho avuto modo di vedere che molti tool di security testing per AI generativa si basano su questa metodologia di attacco. A valle della ricognizione iniziale ho mappato le categorie OWASP più rilevanti ai casi d'uso previsti (prompt injection, disclosure di informazioni sensibili, hallucination e output non sicuri, uso di tool esterni eccessivamente permissivi, data poisoning, differenze tra test in black-box e scenari più informati), cercando di capire come tradurre ciascun rischio in casi di test ripetibili. Ho inoltre analizzato la letteratura più recente (whitepaper, linee guida e report tecnici) per identificare pattern ricorrenti di attacco e difesa e per definire un insieme minimo di metriche di valutazione (riproducibilità del test, tasso di successo del jailbreak, severità dell'impatto, copertura delle categorie OWASP) utile a confrontare approcci manuali e automatizzati.
+Durante la prima settimana di lavoro il \emph{focus} è stato posto sullo studio di OWASP e alla comprensione del ambito di studio del progetto. In questo periodo è stata fatta una estensiva ricerca sulla \emph{top} 10 delle vulnerabilità delle LLM secondo OWASP e dei metodi di \emph{testing}, attacco e \emph{red teaming} più comuni ed efficaci in modo tale da avere una visione completa delle problematiche di sicurezza legate all'AI. Essendo l'ambito di studio in continua evoluzione è stato fondamentale raccogliere informazioni sulle tecnologie più recenti e le metodologie attuali per il \emph{testing} delle vulnerabilità delle LLM. Nei primi giorni della settimana ho avuto modo di provare di persona il \gls{gandalf-test} in modo tale da comprendere a fondo come le LLM possono essere ingannate a rivelare informazioni sensibili (\emph{role play}, uso di lingua differente, richieste implicite, ecc.). Nell'ultima parte della settimana ho approfondito sul concetto di \emph{red teaming} e le sue applicazioni pratiche nel contesto delle LLM poiché ho avuto modo di vedere che molti \emph{tool} di \emph{security testing} per AI generativa si basano su questa metodologia di attacco. A valle della ricognizione iniziale ho mappato le categorie OWASP più rilevanti ai casi d'uso previsti (\emph{prompt injection}, \emph{disclosure} di informazioni sensibili, \emph{hallucination} e \emph{output} non sicuri, uso di \emph{tool} esterni eccessivamente permissivi, \emph{data poisoning}, differenze tra \emph{test} in \emph{black-box} e scenari più informati), cercando di capire come tradurre ciascun rischio in casi di \emph{test} ripetibili. Ho inoltre analizzato la letteratura più recente (\emph{whitepaper}, linee guida e \emph{report} tecnici) per identificare \emph{pattern} ricorrenti di attacco e difesa e per definire un insieme minimo di metriche di valutazione (riproducibilità del \emph{test}, tasso di successo del \gls{jailbreak}\glsfirstoccur, severità dell'impatto, copertura delle categorie OWASP) utile a confrontare approcci manuali e automatizzati.
 
-Sul fronte sperimentale, con il gandalf test ho eseguito più iterazioni variando strategia e contesto per osservare come cambiano le risposte del modello al variare dell'intento e della formulazione (cambio di persona nel role play, ricorso a lingue miste, parafrasi progressive, codifiche/decodifiche semplici, richieste spezzate su più turni, evocazione di autorità fittizie o regole alternative). Ho annotato quali tattiche risultano più efficaci e in quali condizioni falliscono (rate limit, filtri di sicurezza, memoria contestuale), in modo da derivare linee guida utili alla fase di automazione. Ho iniziato anche a delineare il perimetro etico e di compliance, chiarendo i confini del red teaming responsabile e le cautele nella gestione di output potenzialmente sensibili. Questo lavoro preliminare ha permesso di costruire una base metodologica solida, utile per selezionare in modo informato gli strumenti da valutare nelle settimane successive e per impostare una prima matrice di tracciamento tra rischi OWASP, scenari di test e criteri di accettazione.
+Sul fronte sperimentale, con il \gls{gandalf-test} ho eseguito più iterazioni variando strategia e contesto per osservare come cambiano le risposte del modello al variare dell'intento e della formulazione (cambio di persona nel \emph{role play}, ricorso a lingue miste, parafrasi progressive, codifiche/decodifiche semplici, richieste spezzate su più turni, evocazione di autorità fittizie o regole alternative). Ho annotato quali tattiche risultano più efficaci e in quali condizioni falliscono (\emph{rate limit}, filtri di sicurezza, memoria contestuale), in modo da derivare linee guida utili alla fase di automazione. Ho iniziato anche a delineare il perimetro etico e di \emph{compliance}, chiarendo i confini del \emph{red teaming} responsabile e le cautele nella gestione di \emph{output} potenzialmente sensibili. Questo lavoro preliminare ha permesso di costruire una base metodologica solida, utile per selezionare in modo informato gli strumenti da valutare nelle settimane successive e per impostare una prima matrice di tracciamento tra rischi OWASP, scenari di \emph{test} e criteri di accettazione.
 
 \subsection{Settimana 2}
-Nel corso della seconda settimana di lavoro l'interesse si è concentrato sull'analisi approfondita delle varie tecnologie e tool esistenti per il testing delle LLM. Ho condotto una ricerca esaustiva per identificare sia soluzioni open-source che commerciali, valutando ciascuna in base a criteri quali facilità d'uso, capacità di integrazione, copertura delle vulnerabilità OWASP, scalabilità e costi associati. Ho creato una matrice di valutazione comparativa (osservabile nel capitolo \ref{cap:progettazione-codifica}, sezione \ref{sec:tecnologie-strumenti}) per sintetizzare i punti di forza e le limitazioni di ogni strumento, facilitando così la selezione dei candidati più promettenti per le fasi successive del progetto. Durante l'analisi, ho esaminato tool come PromptFoo, PyRIT, LangFuse, DeepEval/DeepTeam, Garak, Giskard, Galileo e LakeraGuard, approfondendo le loro funzionalità specifiche per il security testing delle LLM. Ho valutato come ciascuno di questi strumenti affronta le principali categorie di vulnerabilità identificate nella settimana precedente, e ho visionato numerosi talk e conferenze per comprendere al meglio ogni tool sottoposto ad analisi e le loro applicazioni pratiche. Ho creato piccoli script per testare alcune delle funzionalità offerte dai tool, in modo tale da farmi un'idea più precisa delle loro capacità e limitazioni. Al termine della settimana, ho redatto la matrice di valutazione prima citata la quale servirà come base per la selezione degli strumenti da utilizzare nelle fasi successive del progetto, garantendo che le scelte siano informate e allineate agli obiettivi di sicurezza definiti in precedenza.
+Nel corso della seconda settimana di lavoro l'interesse si è concentrato sull'analisi approfondita delle varie tecnologie e \emph{tool} esistenti per il \emph{testing} delle LLM. Ho condotto una ricerca esaustiva per identificare sia soluzioni \emph{open source} che commerciali, valutando ciascuna in base a criteri quali facilità d'uso, capacità di integrazione, copertura delle vulnerabilità OWASP, scalabilità e costi associati. Ho creato una matrice di valutazione comparativa (osservabile nel capitolo \ref{cap:progettazione-codifica}, sezione \ref{sec:tecnologie-strumenti}) per sintetizzare i punti di forza e le limitazioni di ogni strumento, facilitando così la selezione dei candidati più promettenti per le fasi successive del progetto. Durante l'analisi, ho esaminato \emph{tool} come PromptFoo, PyRIT, LangFuse, DeepEval/DeepTeam, Garak, Giskard, Galileo e LakeraGuard, approfondendo le loro funzionalità specifiche per il \emph{security testing} delle LLM. Ho valutato come ciascuno di questi strumenti affronta le principali categorie di vulnerabilità identificate nella settimana precedente, e ho visionato numerosi \emph{talk} e conferenze per comprendere al meglio ogni \emph{tool} sottoposto ad analisi e le loro applicazioni pratiche. Ho creato piccoli \emph{script} per testare alcune delle funzionalità offerte dai \emph{tool}, in modo tale da farmi un'idea più precisa delle loro capacità e limitazioni. Al termine della settimana, ho redatto la matrice di valutazione prima citata la quale servirà come base per la selezione degli strumenti da utilizzare nelle fasi successive del progetto, garantendo che le scelte siano informate e allineate agli obiettivi di sicurezza definiti in precedenza.
 \subsection{Settimana 3}
 TBA
 \subsection{Settimana 4}

@@ -1,8 +1,7 @@
 \chapter{Introduzione}
 \label{cap:introduzione}
 
-Il presente capitolo introduce il contesto applicativo oggetto dello stage: automazione di testing su applicazioni che sfruttano l'intelligenza artificiale generativa, come chatbot o assistenti virtuali. Queste applicazioni trattano input testuali e informazioni sensibili, esponendo a rischi generali quali manipolazioni degli input, fuoriuscite di dati e comportamenti imprevisti dei modelli.\\
-Il progetto mira a definire e implementare un approccio integrato per valutare e migliorare la sicurezza, l'affidabilità e la conformità delle applicazioni, attraverso analisi del codice, test e pratiche operative dedicate.\\
+Il presente capitolo mira a fornire una panoramica generale del contesto in cui si inserisce il progetto di stage, illustrando l'azienda ospitante, le tecnologie utilizzate e le motivazioni alla base dello sviluppo del software proposto. Verranno inoltre delineati gli obiettivi principali del progetto e le sfide affrontate durante il suo svolgimento.\\
 % \gls{api}. \\
 
 % \noindent Esempio di citazione in linea \\
@@ -12,30 +11,62 @@ Il progetto mira a definire e implementare un approccio integrato per valutare e
 % citazione\footcite{womak:lean-thinking} \\
 
 \section{L'azienda}
-L'azienda con cui ho deciso di intraprendere il mio percorso di Stage è Var Group S.p.A., 
+L'azienda con cui ho deciso di intraprendere il mio percorso di \emph{stage} è Var Group S.p.A., 
 una realtà italiana specializzata in soluzioni IT e servizi di consulenza per le imprese.\\
-La scelta è stata influenzata dalla mia precedente esperienza con il progetto di Software Engineering svolto presso Var Group,
+La scelta è stata influenzata dalla mia precedente esperienza con il progetto di \emph{Software Engineering} svolto presso Var Group,
 durante il quale ho avuto modo di apprezzare la professionalità e la competenza del team.
+
+\subsection{Var Group S.p.A.}
+Var Group S.p.A. è una delle principali aziende italiane nel settore dell'Information Technology, con una vasta gamma di servizi che spaziano dalla consulenza IT alla fornitura di soluzioni software personalizzate. Fondata nel 1993, l'azienda ha sede a Milano e opera a livello nazionale e internazionale, servendo clienti in diversi settori industriali.\\
+Con oltre 30 anni di esperienza, Var Group si è affermata come un partner affidabile per le imprese che cercano di innovare e ottimizzare i propri processi attraverso l'adozione di tecnologie avanzate. L'azienda si distingue per la sua capacità di integrare soluzioni tecnologiche all'avanguardia con una profonda comprensione delle esigenze di business dei clienti.\\
+Var Group offre una vasta gamma di servizi, tra cui consulenza strategica, sviluppo di \emph{software} su misura, implementazione di sistemi \gls{erp}\glsfirstoccur, gestione dell'infrastruttura IT e servizi di \emph{cloud computing}. Inoltre, l'azienda si impegna a fornire soluzioni che promuovono la trasformazione digitale, aiutando le imprese a migliorare l'efficienza operativa e a sfruttare le opportunità offerte dalle nuove tecnologie.\\
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2cm]{azienda-logo}
+	\caption{Logo di Var Group S.p.A.}
+	\label{fig:logo-vargroup}
+\end{figure}
+
+\subsection{Opzioni tecnologiche}
+Grazie alla vasta gamma di collaborazioni che Var Group intrattiene con diverse aziende tecnologiche leader del settore, come AWS e Azure, che forniscono soluzioni comunemente utilizzate in ambienti di lavoro reali, ho avuto l'opportunità di lavorare con tecnologie all'avanguardia e di acquisire competenze pratiche preziose per il mio futuro professionale.\\
+L'azienda mi ha permesso di scegliere quali tecnologie utilizzare tra quelle offerte e supportate, garantendo la disponibilità per l'acquisto delle licenze \emph{software} necessarie allo sviluppo del progetto di \emph{stage}, il che ha reso il lavoro più fluido e stimolante, poiché ho potuto impiegare tecnologie che non avrei facilmente testato in altri contesti.\\
+Var Group, inoltre, lavora attivamente nell'ambito dell'intelligenza artificiale e nello sviluppo di \gls{chatbot}\glsfirstoccur, il che mi ha consentito di approfondire le mie conoscenze grazie alla collaborazione con colleghi esperti del settore, tra cui laureati magistrali in intelligenza artificiale, e di partecipare a progetti reali in cui l'AI è integrata in modo professionale.
+
+\subsection{Ruolo dello \emph{stage} nell'azienda}
+Il progetto di \emph{stage} si inserisce nel contesto generale del \emph{workflow} aziendale, in particolare quello dello sviluppo di \emph{software} con l'integrazione di modelli di intelligenza artificiale generativa. Il progetto di \emph{stage} infatti permetterà di testare la sicurezza e l'affidabilità dei modelli di intelligenza artificiale generativa che Var Group integra nei propri prodotti \emph{software}, garantendo che questi rispettino le linee guida di sicurezza stabilite da \gls{owasp}\glsfirstoccur.
 
 
 \section{Introduzione al caso di studio}
 Negli ultimi anni, l'intelligenza artificiale generativa ha rivoluzionato il modo in cui le applicazioni interagiscono con gli utenti, offrendo esperienze più naturali e coinvolgenti.
-Questa rivoluzione ha cambiato e continua a cambiare il modo in cui gli utenti e le aziende si interfacciano alle applicazioni software.\\
+Questa rivoluzione ha cambiato e continua a cambiare il modo in cui gli utenti e le aziende si interfacciano alle applicazioni \emph{software}.
 Una considerevole porzione delle aziende di tutto il mondo e di tutti gli ambiti hanno integrato o stanno integrando modelli di intelligenza artificiale nei propri prodotti.
+Esempi lampanti sono Amazon con il suo \emph{chatbot} basato su AI Rufus per aiutare gli utenti con gli acquisti sulla propria piattaforma e l'integrazione di \emph{chatbot} in numerosi \emph{browser} come Brave o Opera per aiutare gli utenti nella navigazione \emph{web} e avere una esperienza più personalizzata di ricerca.
 
-\subsection{Necessità del testing per AI generativa}
-Tuttavia l'adozione di questa innovativa tecnologia viene con nuove sfide da affrontare per quanto riguarda la sicurezza e la privacy.\\
-Le applicazioni basate su AI generativa sono esposte a rischi specifici inesistenti prima della loro introduzione, come attacchi di \emph{prompt injection}, \emph{data leakage} e \emph{allucinazioni} dei modelli. Questi rischi possono compromettere la sicurezza delle applicazioni, la privacy degli utenti e l'integrità dei dati trattati.\\
-Per riuscire a mitigare i rischi associati all'utilizzo di modelli di intelligenza artificiale generativa, è fondamentale seguire delle linea guida specifiche come quelle fornite da OWASP, che ha stilato una lista delle top 10 vulnerabilità legate all'utilizzo dell'intelligenza artificiale generativa.\\
-Il progetto di stage si concentra proprio su questo aspetto, il testing delle applicazioni che integrano una LLM per verificarne la conformità con le linee guida OWASP in modo tale da scovare le vulnerabilità e prevenirne l'utilizzo da parte di utenti malintenzionati.\\
 
 \section{Software da sviluppare}
+
+\subsection{Necessità del testing per AI generativa}
+L'adozione di questa innovativa tecnologia viene con nuove sfide da affrontare per quanto riguarda la sicurezza e la privacy.\\
+Le applicazioni basate su AI generativa sono esposte a rischi specifici inesistenti prima della loro introduzione, come attacchi di \gls{prompt-injection}\glsfirstoccur, \gls{data-leakage}\glsfirstoccur e \gls{allucinazioni}\glsfirstoccur dei modelli. Questi rischi possono compromettere la sicurezza delle applicazioni, la \emph{privacy} degli utenti e l'integrità dei dati trattati.\\
+Un esempio reale di rischio è l'integrazione da parte di una azienda di un modello di intelligenza artificiale privo di \gls{guardrail}\glsfirstoccur nel proprio applicativo che permette ad utenti inesperti o malintenzionati di utilizzare il modello per scopi non previsti come ottenere informazioni su come compiere atti illegali o dannosi.
+Per riuscire a mitigare i rischi associati all'utilizzo di modelli di intelligenza artificiale generativa, è fondamentale seguire delle linea guida specifiche come quelle fornite da OWASP, che ha stilato una lista delle \emph{top} 10 vulnerabilità legate all'utilizzo dell'intelligenza artificiale generativa.\\
+Il progetto di \emph{stage} si concentra proprio su questo aspetto, il \emph{testing} delle applicazioni che integrano una \gls{llm}\glsfirstoccur per verificarne la conformità con le linee guida OWASP in modo tale da scovare le vulnerabilità e prevenirne l'utilizzo da parte di utenti malintenzionati.\\
 
 
 
 \subsection{L'idea}
+L'idea iniziale per affrontare il problema della sicurezza nelle applicazioni che integrano modelli di intelligenza artificiale generativa consisteva nell'impiegare strumenti già disponibili sul mercato, per poi catalogare e analizzare i risultati al fine di identificare le vulnerabilità dei vari modelli. Dopo un'attenta riflessione, ho deciso di sviluppare un applicativo completo e la relativa logica di \emph{testing}, così da avere maggiore controllo sul processo di verifica e sulle opzioni di personalizzazione. In particolare il mio interesse si è concentrato sulla personalizzazione e l'intercambiabilità dei \gls{dataset}\glsfirstoccur utilizzabili per l'analisi e il \emph{testing} delle LLM. Un altro fattore che mi ha portato alla creazione di un applicativo personalizzato è quello della possibilità di \emph{testing} filtrando soltanto le categorie interessate senza dover effettuare test completi in casi in cui non sia necessario o richiesto. Un altro scenario per cui ho scelto questo approccio per la risoluzione del problema è quello in cui l'azienda necessita di particolari modifiche nei casi di \emph{testing}, cosa impossibile con \emph{tool} acquistabili poiché non facilmente personalizzabili; in questo modo, nel caso l'azienda per esempio necessiti di un caso di \emph{testing} specifico ad esempio per un particolare modello, questo può essere implementato e testato in modo più semplice ed efficiente. Questo permette anche di intercambiare i modelli di valutazione delle risposte del modello testato in modo tale da avere più risultati da analizzare per un \emph{testing} più comprensivo e accurato. \\
+Questa scelta permette di adattare le procedure di valutazione ai diversi contesti applicativi, ridurre la dipendenza da \emph{tool} proprietari e favorire l'evoluzione del prodotto in risposta a nuove minacce e requisiti normativi. Inoltre, l'approccio garantisce una migliore interoperabilità con i sistemi esistenti e facilita la manutenzione, la scalabilità e il \emph{versioning} dei casi di test.\\
 
-\newline
+\section{Struttura del documento}
+Il documento si divide in sei capitoli principali, inclusa questa introduzione.\\
+\hyperref[cap:processi-metodologie]{Il secondo capitolo} fornisce una panoramica delle tecnologie e degli strumenti utilizzati per lo sviluppo del prototipo, nonché una descrizione dettagliata della progettazione e dell'architettura del sistema.\\
+\hyperref[cap:descrizione-stage]{Il terzo capitolo} descrive il processo di implementazione del prototipo, illustrando le sfide affrontate e le soluzioni adottate.\\
+\hyperref[cap:analisi-requisiti]{Il quarto capitolo} presenta i risultati ottenuti durante la fase di testing del prototipo, analizzando le prestazioni e l'efficacia del sistema sviluppato.\\
+\hyperref[cap:progettazione-codifica]{Il quinto capitolo} descrive la progettazione e le tecnologie utilizzate.\\
+\hyperref[cap:conclusioni]{Il sesto e ultimo capitolo} riassume le conclusioni del progetto di \emph{stage}, evidenziando i principali risultati raggiunti e proponendo possibili sviluppi futuri per migliorare ulteriormente il prototipo.\\
+
 
 Riguardo la stesura del testo, relativamente al documento sono state adottate le seguenti convenzioni tipografiche:
 \begin{itemize}
