@@ -1,58 +1,46 @@
 \chapter{Descrizione dello stage}
 \label{cap:descrizione-stage}
-\intro{In questo capitolo viene fornita una panoramica del progetto di stage incentrato sulla sicurezza di AI generativa (OWASP, Gandalf Test), dei rischi e delle mitigazioni, dei requisiti e degli obiettivi, e della pianificazione fino alla produzione di report e dashboard.}\\
+\intro{In questo capitolo viene fornita una panoramica del progetto di stage incentrato sulla sicurezza dell'\emph{AI generativa} (\emph{OWASP}, \emph{Gandalf Test}), dei rischi e delle mitigazioni, dei requisiti e degli obiettivi, e della pianificazione fino alla produzione di \emph{report} e \emph{dashboard}.}\\
 
-\section{Introduzione al progetto}
+Durante la fase iniziale di analisi sono stati identificati i principali rischi potenziali connessi al progetto, classificati per ambito (tecnico, di progetto e infrastrutturale) e prioritizzati in base all'impatto e alla probabilità. Per ciascun rischio è stato predisposto un piano di mitigazione che definisce azioni concrete, tempistiche e responsabilità precise.
 
+Le contromisure prevedono attività di sperimentazione controllata degli strumenti, revisioni manuali dei risultati, integrazione e \emph{test} in ambienti rappresentativi, oltre a piani di \emph{escalation} per le criticità più gravi. È inoltre prevista una procedura di monitoraggio continuo e revisione periodica delle valutazioni e delle soluzioni adottate, in modo da aggiornare rapidamente le contromisure alla luce di nuovi dati o evoluzioni tecnologiche.\\
 
-\section{Analisi preventiva dei rischi}
-
-Durante la fase iniziale di analisi sono stati identificati i principali rischi potenziali connessi al progetto, classificati per ambito (tecnico, di progetto e infrastrutturale) e priorizzati in base all'impatto e alla probabilità. Per ciascun rischio è stato predisposto un piano di mitigazione che definisce azioni concrete, tempistiche e responsabilità precise.
-
-Le contromisure prevedono attività di sperimentazione controllata degli strumenti, revisioni manuali dei risultati, integrazione e test in ambienti rappresentativi, oltre a piani di escalation per le criticità più gravi. È inoltre prevista una procedura di monitoraggio continuo e revisione periodica delle valutazioni e delle soluzioni adottate, in modo da aggiornare rapidamente le contromisure alla luce di nuovi dati o evoluzioni tecnologiche.
-
-\subsection{Rischi tecnici}
-
-\begin{risk}{Complessità nell'applicare strumenti di \emph{security testing} ad AI generativa (\emph{tool} immaturi o
+\begin{risk}{Complessità nell'applicare strumenti di \emph{security testing} ad \emph{AI generativa} (\emph{tool} immaturi o
 non sempre affidabili).}
-    \riskdescription{Le difficoltà nell'adattare i \emph{tool} di \emph{security testing} all'AI generativa possono derivare dalla loro immaturità o dalla mancanza di affidabilità}
-    \risksolution{Una lunga fase di sperimentazione e \emph{testing} dei \emph{tool} ha mitigato i rischi, garantendo risultati affidabili}
+    \riskdescription{Le difficoltà nell'adattare i \emph{tool} di \emph{security testing} all'\emph{AI generativa} possono derivare dalla loro immaturità o dalla mancanza di affidabilità.}
+    \risksolution{Una lunga fase di sperimentazione e \emph{testing} dei \emph{tool} ha mitigato i rischi, garantendo risultati affidabili.}
 \end{risk}
 
 \begin{risk}{Possibili falsi positivi o negativi nei \emph{test} di vulnerabilità.}
-    \riskdescription{I \emph{test} di vulnerabilità potrebbero generare risultati inaccurati, con falsi positivi (segnalazioni errate di vulnerabilità) o falsi negativi (mancata rilevazione di vulnerabilità reali)}
-    \risksolution{Implementare una fase di revisione manuale dei risultati dei \emph{test} per convalidare le segnalazioni e ridurre il rischio di falsi positivi e negativi}
+    \riskdescription{I \emph{test} di vulnerabilità potrebbero generare risultati inaccurati, con falsi positivi (segnalazioni errate di vulnerabilità) o falsi negativi (mancata rilevazione di vulnerabilità reali).}
+    \risksolution{Implementare una fase di revisione manuale dei risultati dei \emph{test} per convalidare le segnalazioni e ridurre il rischio di falsi positivi e negativi.}
 \end{risk}
 
 \begin{risk}{Difficoltà di integrazione dei \emph{tool} con codice reale e \gls{pipeline}\glsfirstoccur di sviluppo.}
-    \riskdescription{Le difficoltà di integrazione possono derivare da incompatibilità tra i \emph{tool} di \emph{testing} e l'infrastruttura esistente, nonché dalla complessità del codice reale su cui si stanno eseguendo i \emph{test}}
-    \risksolution{Collaborare con gli sviluppatori del codice reale per garantire che i \emph{tool} di \emph{testing} siano compatibili con l'infrastruttura esistente e fornire supporto durante l'integrazione}
+    \riskdescription{Le difficoltà di integrazione possono derivare da incompatibilità tra i \emph{tool} di \emph{testing} e l'infrastruttura esistente, nonché dalla complessità del codice reale su cui si stanno eseguendo i \emph{test}.}
+    \risksolution{Collaborare con gli sviluppatori del codice reale per garantire che i \emph{tool} di \emph{testing} siano compatibili con l'infrastruttura esistente e fornire supporto durante l'integrazione.}
 \end{risk}
 
-\subsection{Rischi di progetto}
-
-\begin{risk}{Mancanza di esperienza pregressa su OWASP o sicurezza AI.}
-    \riskdescription{La poca familiarità con le \emph{best practice} di OWASP o con le specificità della sicurezza nell'AI generativa potrebbe rallentare l'avanzamento del progetto}
-    \risksolution{Studio e formazione con risorse adeguate per aumentare la familiarità con OWASP e la sicurezza dell'AI generativa}
+\begin{risk}{Mancanza di esperienza pregressa su \emph{OWASP} o sicurezza \emph{AI}.}
+    \riskdescription{La poca familiarità con le \emph{best practice} di \emph{OWASP} o con le specificità della sicurezza nell'\emph{AI generativa} potrebbe rallentare l'avanzamento del progetto.}
+    \risksolution{Studio e formazione con risorse adeguate per aumentare la familiarità con \emph{OWASP} e la sicurezza dell'\emph{AI generativa}.}
 \end{risk}
 
 \begin{risk}{Possibile difficoltà a rispettare la pianificazione a causa della curva di apprendimento iniziale.}
-    \riskdescription{La curva di apprendimento iniziale per l'utilizzo di nuovi strumenti e tecnologie potrebbe richiedere più tempo del previsto, influenzando la pianificazione del progetto}
-    \risksolution{Pianificazione di margini di tempo aggiuntivi per la formazione e l'adattamento agli strumenti, nonché monitoraggio attento dei progressi}
+    \riskdescription{La curva di apprendimento iniziale per l'utilizzo di nuovi strumenti e tecnologie potrebbe richiedere più tempo del previsto, influenzando la pianificazione del progetto.}
+    \risksolution{Pianificazione di margini di tempo aggiuntivi per la formazione e l'adattamento agli strumenti, nonché monitoraggio attento dei progressi.}
 \end{risk}
 
-\subsection{Rischi infrastrutturali}
-
-\begin{risk}{Limitazioni di risorse computazionali nei \emph{test} di AI.}
-    \riskdescription{Le risorse computazionali disponibili per l'esecuzione dei \emph{test} di AI potrebbero non essere sufficienti, causando rallentamenti o interruzioni nei \emph{test}}
-    \risksolution{Ottimizzazione dell'uso delle risorse disponibili e richiesta di accesso a risorse computazionali aggiuntive}
+\begin{risk}{Limitazioni di risorse computazionali nei \emph{test} di \emph{AI}.}
+    \riskdescription{Le risorse computazionali disponibili per l'esecuzione dei \emph{test} di \emph{AI} potrebbero non essere sufficienti, causando rallentamenti o interruzioni nei \emph{test}.}
+    \risksolution{Ottimizzazione dell'uso delle risorse disponibili e richiesta di accesso a risorse computazionali aggiuntive.}
 \end{risk}
 
 \begin{risk}{Problemi di compatibilità con ambienti \emph{cloud} o di \emph{deployment}.}
-    \riskdescription{Le differenze tra gli ambienti di sviluppo e produzione potrebbero causare problemi di compatibilità, rendendo difficile l'esecuzione dei \emph{test} in modo uniforme}
-    \risksolution{Testare i \emph{tool} di \emph{testing} in ambienti simili a quelli di produzione e documentazione di eventuali problemi di compatibilità}
+    \riskdescription{Le differenze tra gli ambienti di sviluppo e produzione potrebbero causare problemi di compatibilità, rendendo difficile l'esecuzione dei \emph{test} in modo uniforme.}
+    \risksolution{\emph{Testare} i \emph{tool} di \emph{testing} in ambienti simili a quelli di produzione e documentazione di eventuali problemi di compatibilità.}
 \end{risk}
-
 
 \section{Requisiti e obiettivi}
 
@@ -60,17 +48,17 @@ non sempre affidabili).}
 \subsection{Obiettivi obbligatori}
 \begin{itemize}
 \item Valutazione comparativa degli strumenti di analisi.
-\item Applicazione pratica dei test su codice reale.
-\item Prototipo in grado di generare report sulle vulnerabilità AI rispetto a OWASP.
+\item Applicazione pratica dei \emph{test} su codice reale.
+\item Prototipo in grado di generare \emph{report} sulle vulnerabilità \emph{AI} rispetto a \emph{OWASP}.
 \item Documentazione tecnica e presentazione finale.
 \end{itemize}
 
 \subsection{Obiettivi desiderabili}
 \begin{itemize}
-\item \emph{Dashboard} interattiva con visualizzazioni avanzate
+\item \emph{Dashboard} interattiva con visualizzazioni avanzate.
 \item Integrazione del prototipo in \emph{pipeline} \gls{cicd}\glsfirstoccur esistente.
 \item Estensione dei \emph{test} ad altri \emph{framework} oltre \gls{gandalf-test}\glsfirstoccur.
-\item Raccomandazioni per un \emph{framework} interno di AI \emph{Security by Design}.
+\item Raccomandazioni per un \emph{framework} interno di \emph{AI Security by Design}.
 \end{itemize}
 
 \section{Pianificazione}
@@ -84,7 +72,7 @@ La pianificazione del lavoro di progetto è stata suddivisa in fasi settimanali,
         \hline
         \textbf{Settimana} & \textbf{Attività} \\
         \hline
-        Settimana 1 & Studio preliminare su OWASP e rischi AI, \emph{overview} di \gls{gandalf-test}, \emph{setup} ambiente di
+        Settimana 1 & Studio preliminare su \emph{OWASP} e rischi \emph{AI}, \emph{overview} di \gls{gandalf-test}, \emph{setup} ambiente di
 lavoro.\\
         \hline
         Settimana 2 & Analisi comparativa di \emph{tool} di analisi statica e dinamica (\emph{open source} e commerciali).
@@ -97,7 +85,7 @@ criticità.\\
 identificazione vulnerabilità.\\
         \hline
         Settimana 5 & Realizzazione di \emph{script}/\emph{report} per aggregare risultati, definizione dei \gls{kpi}\glsfirstoccur di \emph{compliance}
-OWASP.\\
+\emph{OWASP}.\\
         \hline
         Settimana 6 & Sviluppo di \emph{dashboard} interattiva per monitorare vulnerabilità e andamento dei \emph{test}.\\
         \hline
@@ -109,23 +97,35 @@ della tesi.\\
     \end{tabular}
     \caption{Pianificazione delle attività di progetto}
 \end{table}
-
+\newpage
 \subsection{Settimana 1}
-Durante la prima settimana di lavoro il \emph{focus} è stato posto sullo studio di OWASP e alla comprensione del ambito di studio del progetto. In questo periodo è stata fatta una estensiva ricerca sulla \emph{top} 10 delle vulnerabilità delle LLM secondo OWASP e dei metodi di \emph{testing}, attacco e \emph{red teaming} più comuni ed efficaci in modo tale da avere una visione completa delle problematiche di sicurezza legate all'AI. Essendo l'ambito di studio in continua evoluzione è stato fondamentale raccogliere informazioni sulle tecnologie più recenti e le metodologie attuali per il \emph{testing} delle vulnerabilità delle LLM. Nei primi giorni della settimana ho avuto modo di provare di persona il \gls{gandalf-test} in modo tale da comprendere a fondo come le LLM possono essere ingannate a rivelare informazioni sensibili (\emph{role play}, uso di lingua differente, richieste implicite, ecc.). Nell'ultima parte della settimana ho approfondito sul concetto di \emph{red teaming} e le sue applicazioni pratiche nel contesto delle LLM poiché ho avuto modo di vedere che molti \emph{tool} di \emph{security testing} per AI generativa si basano su questa metodologia di attacco. A valle della ricognizione iniziale ho mappato le categorie OWASP più rilevanti ai casi d'uso previsti (\emph{prompt injection}, \emph{disclosure} di informazioni sensibili, \emph{hallucination} e \emph{output} non sicuri, uso di \emph{tool} esterni eccessivamente permissivi, \emph{data poisoning}, differenze tra \emph{test} in \emph{black-box} e scenari più informati), cercando di capire come tradurre ciascun rischio in casi di \emph{test} ripetibili. Ho inoltre analizzato la letteratura più recente (\emph{whitepaper}, linee guida e \emph{report} tecnici) per identificare \emph{pattern} ricorrenti di attacco e difesa e per definire un insieme minimo di metriche di valutazione (riproducibilità del \emph{test}, tasso di successo del \gls{jailbreak}\glsfirstoccur, severità dell'impatto, copertura delle categorie OWASP) utile a confrontare approcci manuali e automatizzati.
+Durante la prima settimana di lavoro il \emph{focus} è stato posto sullo studio di \emph{OWASP} e sulla comprensione dell'ambito di studio del progetto. In questo periodo è stata fatta un'estensiva ricerca sulla \emph{top} 10 delle vulnerabilità delle LLM secondo \emph{OWASP} e dei metodi di \emph{testing}, attacco e \emph{red teaming} più comuni ed efficaci, in modo tale da avere una visione completa delle problematiche di sicurezza legate all'AI. Essendo l'ambito di studio in continua evoluzione, è stato fondamentale raccogliere informazioni sulle tecnologie più recenti e le metodologie attuali per il \emph{testing} delle vulnerabilità delle LLM. Nei primi giorni della settimana ho avuto modo di provare di persona il \gls{gandalf-test} in modo tale da comprendere a fondo come le LLM possono essere ingannate a rivelare informazioni sensibili (\emph{role play}, uso di lingua differente, richieste implicite, ecc.). Nell'ultima parte della settimana ho approfondito il concetto di \emph{red teaming} e le sue applicazioni pratiche nel contesto delle LLM, poiché ho avuto modo di vedere che molti \emph{tool} di \emph{security testing} per AI generativa si basano su questa metodologia di attacco. A valle della ricognizione iniziale ho mappato le categorie \emph{OWASP} più rilevanti ai casi d'uso previsti (\emph{prompt injection}, \emph{disclosure} di informazioni sensibili, \emph{hallucination} e \emph{output} non sicuri, uso di \emph{tool} esterni eccessivamente permissivi, \emph{data poisoning}, differenze tra \emph{test} in \emph{black-box} e scenari più informati), cercando di capire come tradurre ciascun rischio in casi di \emph{test} ripetibili. Ho inoltre analizzato la letteratura più recente (\emph{whitepaper}, linee guida e \emph{report} tecnici) per identificare \emph{pattern} ricorrenti di attacco e difesa e per definire un insieme minimo di metriche di valutazione (riproducibilità del \emph{test}, tasso di successo del \gls{jailbreak}\glsfirstoccur, severità dell'impatto, copertura delle categorie \emph{OWASP}) utile a confrontare approcci manuali e automatizzati.
 
-Sul fronte sperimentale, con il \gls{gandalf-test} ho eseguito più iterazioni variando strategia e contesto per osservare come cambiano le risposte del modello al variare dell'intento e della formulazione (cambio di persona nel \emph{role play}, ricorso a lingue miste, parafrasi progressive, codifiche/decodifiche semplici, richieste spezzate su più turni, evocazione di autorità fittizie o regole alternative). Ho annotato quali tattiche risultano più efficaci e in quali condizioni falliscono (\emph{rate limit}, filtri di sicurezza, memoria contestuale), in modo da derivare linee guida utili alla fase di automazione. Ho iniziato anche a delineare il perimetro etico e di \emph{compliance}, chiarendo i confini del \emph{red teaming} responsabile e le cautele nella gestione di \emph{output} potenzialmente sensibili. Questo lavoro preliminare ha permesso di costruire una base metodologica solida, utile per selezionare in modo informato gli strumenti da valutare nelle settimane successive e per impostare una prima matrice di tracciamento tra rischi OWASP, scenari di \emph{test} e criteri di accettazione.
-
+Sul fronte sperimentale, con il \gls{gandalf-test} ho eseguito più iterazioni variando strategia e contesto per osservare come cambiano le risposte del modello al variare dell'intento e della formulazione (cambio di persona nel \emph{role play}, ricorso a lingue miste, parafrasi progressive, codifiche/decodifiche semplici, richieste spezzate su più turni, evocazione di autorità fittizie o regole alternative). Ho annotato quali tattiche risultano più efficaci e in quali condizioni falliscono (\emph{rate limit}, filtri di sicurezza, memoria contestuale), in modo da derivare linee guida utili alla fase di automazione. Ho iniziato anche a delineare il perimetro etico e di \emph{compliance}, chiarendo i confini del \emph{red teaming} responsabile e le cautele nella gestione di \emph{output} potenzialmente sensibili. Questo lavoro preliminare ha permesso di costruire una base metodologica solida, utile per selezionare in modo informato gli strumenti da valutare nelle settimane successive e per impostare una prima matrice di tracciamento tra rischi \emph{OWASP}, scenari di \emph{test} e criteri di accettazione.
+\newpage
 \subsection{Settimana 2}
-Nel corso della seconda settimana di lavoro l'interesse si è concentrato sull'analisi approfondita delle varie tecnologie e \emph{tool} esistenti per il \emph{testing} delle LLM. Ho condotto una ricerca esaustiva per identificare sia soluzioni \emph{open source} che commerciali, valutando ciascuna in base a criteri quali facilità d'uso, capacità di integrazione, copertura delle vulnerabilità OWASP, scalabilità e costi associati. Ho creato una matrice di valutazione comparativa (osservabile nel capitolo \ref{cap:progettazione-codifica}, sezione \ref{sec:tecnologie-strumenti}) per sintetizzare i punti di forza e le limitazioni di ogni strumento, facilitando così la selezione dei candidati più promettenti per le fasi successive del progetto. Durante l'analisi, ho esaminato \emph{tool} come PromptFoo, PyRIT, LangFuse, DeepEval/DeepTeam, Garak, Giskard, Galileo e LakeraGuard, approfondendo le loro funzionalità specifiche per il \emph{security testing} delle LLM. Ho valutato come ciascuno di questi strumenti affronta le principali categorie di vulnerabilità identificate nella settimana precedente, e ho visionato numerosi \emph{talk} e conferenze per comprendere al meglio ogni \emph{tool} sottoposto ad analisi e le loro applicazioni pratiche. Ho creato piccoli \emph{script} per testare alcune delle funzionalità offerte dai \emph{tool}, in modo tale da farmi un'idea più precisa delle loro capacità e limitazioni. Al termine della settimana, ho redatto la matrice di valutazione prima citata la quale servirà come base per la selezione degli strumenti da utilizzare nelle fasi successive del progetto, garantendo che le scelte siano informate e allineate agli obiettivi di sicurezza definiti in precedenza.
+Nel corso della seconda settimana di lavoro l'interesse si è concentrato sull'analisi approfondita delle varie tecnologie e \emph{tool} esistenti per il \emph{testing} delle LLM. Ho condotto una ricerca esaustiva per identificare sia soluzioni \emph{open source} che commerciali, valutando ciascuna in base a criteri quali facilità d'uso, capacità di integrazione, copertura delle vulnerabilità \emph{OWASP}, scalabilità e costi associati. Ho creato una matrice di valutazione comparativa (osservabile nel capitolo \ref{cap:progettazione-codifica}, sezione \ref{sec:tecnologie-strumenti}) per sintetizzare i punti di forza e le limitazioni di ogni strumento, facilitando così la selezione dei candidati più promettenti per le fasi successive del progetto. Durante l'analisi, ho esaminato \emph{tool} come PromptFoo, PyRIT, LangFuse, DeepEval/DeepTeam, Garak, Giskard, Galileo e LakeraGuard, approfondendo le loro funzionalità specifiche per il \emph{security testing} delle LLM. Ho valutato come ciascuno di questi strumenti affronta le principali categorie di vulnerabilità identificate nella settimana precedente, e ho visionato numerosi \emph{talk} e conferenze per comprendere al meglio ogni \emph{tool} sottoposto ad analisi e le loro applicazioni pratiche. Ho creato piccoli \emph{script} per testare alcune delle funzionalità offerte dai \emph{tool}, in modo tale da farmi un'idea più precisa delle loro capacità e limitazioni. Al termine della settimana, ho redatto la matrice di valutazione prima citata la quale servirà come base per la selezione degli strumenti da utilizzare nelle fasi successive del progetto, garantendo che le scelte siano informate e allineate agli obiettivi di sicurezza definiti in precedenza.
+
 \subsection{Settimana 3}
-TBA
+Durante lo svolgimento della terza settimana ho avuto l'opportunità di mettere in pratica le conoscenze acquisite nelle settimane precedenti, applicando i \emph{tool} di \emph{security testing} selezionati a dei modelli di AWS Bedrock forniti dall'azienda. Questa fase sperimentale è stata fondamentale per valutare l'efficacia degli strumenti in scenari reali e per identificare eventuali criticità o limitazioni nell'uso pratico. Ho testato diversi modelli forniti da Bedrock come Nova micro e Nova pro, eseguendo una serie di \emph{test} mirati a rilevare vulnerabilità specifiche secondo le categorie \emph{OWASP} identificate in precedenza anche se è importante prendere in considerazione il fatto che i modelli di bedrock non dispongono di dati di training specifici o dati degli utenti come i chatbot e quindi non è stato possibile effettuare il testing delle categorie OWASP che fanno leva su queste caratteristiche. Durante questa fase, ho documentato attentamente i risultati ottenuti, annotando sia i successi che le difficoltà incontrate nell'uso dei \emph{tool}.\\
+Ho analizzato i dati raccolti per valutare l'accuratezza e l'affidabilità dei \emph{test}, confrontando i risultati con le aspettative basate sulla letteratura e sulle best practice del settore. Questa esperienza pratica mi ha permesso di comprendere meglio le dinamiche del \emph{security testing} delle LLM e di identificare aree di miglioramento sia nei \emph{tool} utilizzati che nelle strategie di \emph{testing} adottate.  
+
 \subsection{Settimana 4}
-TBA
+La quarta settimana di lavoro è stata una delle settimane più complicate dell'intero percorso di stage. Il problema principale è stato l'impossibilità di effettuare dei \emph{test} su componenti reali del \emph{team} a causa di problemi di accesso e permessi. Nonostante i numerosi tentativi di risolvere la situazione, non sono riuscito ad ottenere l'accesso necessario per eseguire i \emph{test} sul \emph{chatbot} aziendale, il quale era il componente principale su cui avrei dovuto effettuare i \emph{test}. A causa di questi problemi, ho dovuto adattare il mio piano di lavoro e effettuare il testing su altre piattaforme, in particolare sono riuscito ad interfacciarmi tramite API al chatbot del gandalf test fornito da Lakera per effettuare dei test sul corretto funzionamento dell'applicativo. Inoltre ho dedicato del tempo a migliorare il sistema di \emph{testing} sviluppato nelle settimane precedenti, ottimizzando gli \emph{script} e aggiungendo nuove funzionalità per renderlo più robusto e flessibile. Nonostante le difficoltà incontrate, sono riuscito a fare progressi significativi nel miglioramento del sistema di \emph{testing}, preparandomi al meglio per quando finalmente avrò accesso ai componenti reali del \emph{team}. Al termine della settimana, ho stilato un elenco di azioni da intraprendere non appena avrò risolto i problemi di accesso, in modo da poter riprendere rapidamente il lavoro sui \emph{test} non appena possibile.
+
 \subsection{Settimana 5}
-TBA
+Durante la quinta settimana di lavoro, l'attenzione si è concentrata sulla creazione di un sistema automatizzato per l'esecuzione dei \emph{test} di sicurezza sulle LLM e sulla generazione di \emph{report} dettagliati sui risultati ottenuti. Ho iniziato sviluppando una serie di \emph{script} in Python che consentono di eseguire i \emph{test} in modo sistematico e ripetibile, integrando le funzionalità dei \emph{tool} di \emph{security testing} selezionati nelle settimane precedenti. Questi \emph{script} sono stati progettati per essere modulari e facilmente estendibili, in modo da poter aggiungere nuovi scenari di \emph{test} o adattare quelli esistenti in base alle esigenze specifiche del progetto. I risultati dei test giudicati dal modello di scoring utilizzato sono stati raccolti e organizzati in un formato strutturato, facilitando l'analisi e la visualizzazione dei dati. Ho implementato un sistema di generazione automatica di \emph{report} che sintetizza i risultati dei \emph{test}, evidenziando le vulnerabilità identificate, il loro impatto potenziale e le raccomandazioni per la mitigazione. Questi \emph{report} sono stati progettati per essere chiari e comprensibili, in modo da poter essere utilizzati sia da tecnici esperti che da stakeholder non tecnici. Inoltre, ho definito una serie di \gls{kpi}\glsfirstoccur per misurare l'efficacia del sistema di \emph{testing} e la conformità alle linee guida \emph{OWASP}, consentendo così di monitorare i progressi nel tempo e identificare aree di miglioramento. Al termine della settimana, il sistema automatizzato era funzionale e pronto per essere utilizzato nelle fasi successive del progetto, rappresentando un passo significativo verso il raggiungimento degli obiettivi prefissati.
+\newpage
 \subsection{Settimana 6}
-TBA
+Nel corso della sesta settimana di lavoro, l'attenzione si è concetrata sulla creazione della \emph{dashboard} interattiva richiesta dal progetto di \emph{stage}. Il \emph{framework} scelto per lo sviluppo della \emph{dashboard} è stato \emph{React}, scelto poiché è uno strumento che viene utilizzato regolarmente dai membri dell'azienda per lo sviluppo dei loro prodotti garantendo supporto e aiuto in caso di problemi nell'utilizzo dello strumento, inoltre permette una facile integrazione del \emph{prototipo} nel contesto aziendale esistente. La \emph{dashboard} è stata progettata per fornire una visualizzazione chiara e intuitiva dei risultati dei \emph{test} di sicurezza eseguiti sulle \emph{LLM}, con particolare attenzione alla rappresentazione delle vulnerabilità identificate in relazione alle categorie \emph{OWASP}. Ho implementato grafici interattivi e tabelle che consentono agli utenti di esplorare i dati in modo dinamico, filtrando e ordinando i \emph{test} in base a vari criteri come data di esecuzione, tipo di \emph{scorer} utilizzato e \emph{coverage} dei \emph{test}. Ho inoltre integrato una visualizzazione personalizzata per ogni singolo \emph{test} in modo tale da poter analizzare l'andamento di ogni singolo \emph{test} per ogni categoria \emph{OWASP}, permettendo così agli utenti di identificare rapidamente le aree di maggiore rischio, da qui è anche possibile visualizzare ogni singolo \emph{prompt} inviato con relativa risposta e \emph{rationale} dello \emph{scorer} che spiega l'andamento del \emph{test} e controlla se il \emph{test} è stato passato con successo o ha fallito. La \emph{dashboard} è stata sviluppata con un'attenzione particolare all'usabilità, garantendo che anche utenti non tecnici possano navigare facilmente tra i dati e comprendere le implicazioni delle vulnerabilità identificate. Al termine della settimana, la \emph{dashboard} era funzionale e pronta per essere integrata con il \emph{prototipo} di \emph{test} sviluppato nelle settimane precedenti, rappresentando un passo significativo verso il completamento degli obiettivi del progetto di \emph{stage}.
+
 \subsection{Settimana 7}
-TBA
+Durante la settima settimana di lavoro si è posta l'attenzione alla risoluzione dei problemi della quarta settimana relativi al \emph{testing} del \emph{prototipo} su componenti reali del \emph{team}. Dopo aver risolto i problemi e ottenuto l'accesso al \emph{chatbot} aziendale sono riuscito ad effettuare dei \emph{test} su un \emph{prodotto} effettivo in modo tale da valutare l'accuratezza e l'efficienza del mio \emph{prototipo}, purtroppo per il poco tempo il \emph{testing} non è potuto essere approfondito quanto avremmo voluto. In questa settimana ho inoltre migliorato il sistema di \emph{testing} dei \emph{modelli} grazie ai risultati ottenuti dal \emph{testing} sul \emph{chatbot} aziendale e ho formattato il \emph{codice} in modo tale da renderlo più leggibile e manutenibile. Ho inoltre migliorato il sistema di \emph{reportistica} automatica in modo tale da poter generare \emph{report} più dettagliati e completi sui risultati dei \emph{test} eseguiti. Infine, ho integrato il \emph{prototipo} con la \emph{dashboard} sviluppata nella settimana precedente, permettendo così una visualizzazione immediata e interattiva dei risultati dei \emph{test} direttamente all'interno della \emph{dashboard}. Questa integrazione ha migliorato notevolmente l'usabilità del \emph{prototipo}, consentendo agli utenti di accedere facilmente ai dati e alle analisi dei \emph{test} di sicurezza delle \emph{LLM}. Sotto consiglio del tutor aziendale ho aggiunto alla \emph{dashboard} un \emph{mock button} che verrà poi implementato e servirà per l'aggiunta di nuovi \emph{dataset} per il \emph{testing} in modo tale da poter ampliare il numero di \emph{test} possibili oltre al \emph{testing OWASP}. Al termine della settimana, il \emph{prototipo} era completamente integrato con la \emph{dashboard} e pronto per essere utilizzato per ulteriori \emph{test} e analisi.
+
 \subsection{Settimana 8}
-TBA
+L'ottava e ultima settimana è stata dedicata alla redazione della documentazione tecnica e alla creazione del manuale utente per il \emph{prototipo} sviluppato. È stato scelto di integrare il manuale utente direttamente nell'\emph{applicazione web} del \emph{prototipo} in modo tale da renderlo facilmente accessibile agli utenti finali. La redazione della documentazione è stata fondamentale per lo sviluppo della tesi, in particolare la stesura della documentazione si è concentrata sull'analisi delle tecnologie utilizzate e le ragioni dietro la scelta di tali tecnologie.\\
+Durante questo periodo è stata inoltre preparata la \emph{presentazione finale} della tesi, che includeva una panoramica del progetto, i risultati ottenuti e le conclusioni tratte. La \emph{presentazione} è stata strutturata in modo da evidenziare i punti chiave del lavoro svolto e per comunicare efficacemente i risultati raggiunti durante lo \emph{stage}. L'azienda ospitante ha fornito uno spazio in cui ho potuto presentare il lavoro svolto davanti a colleghi e esperti nel settore per emulare una situazione reale di \emph{presentazione professionale} e prepararmi alla \emph{presentazione} della tesi di laurea.
+
+\section{Pianificazione in retrospettiva}
+La pianificazione del progetto di stage si è rivelata in gran parte efficace, con la maggior parte delle attività previste completate nei tempi stabiliti. Tuttavia, alcune sfide impreviste, come i problemi di accesso ai componenti reali del \emph{team}, hanno richiesto un adattamento del piano di lavoro.
+\\Nonostante queste difficoltà, sono riuscito a mantenere il focus sugli obiettivi principali del progetto e a fare progressi significativi in tutte le fasi pianificate e il tutor aziendale si è detto soddisfatto del lavoro svolto e dei risultati ottenuti, sottolineando l'importanza del progetto per l'azienda e il valore aggiunto apportato dal \emph{prototipo} sviluppato. La flessibilità nella gestione del tempo e delle risorse si è dimostrata cruciale per affrontare gli imprevisti e garantire il successo del progetto complessivo.
