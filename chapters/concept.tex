@@ -139,412 +139,198 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
     \includegraphics[width=\textwidth]{usecase/4-15.png} 
     \caption{Use Case - UC4 to UC15}
 \end{figure}
+
 \newpage
 
-\begin{usecase}{16}{Visualizzazione dettagli singolo test}
+\begin{usecase}{16}{Avvio nuovo test da Dashboard}
 \usecaseactors{Utente}
-\usecasepre{L'utente ha effettuato l'accesso alla dashboard e ha selezionato un test dalla lista dei test}
-\usecasedesc{L'utente visualizza i dettagli completi di un singolo test}
-\usecasepost{L'utente ha visualizzato i dettagli completi del singolo test selezionato}
+\usecasepre{L'utente si trova nella dashboard principale}
+\usecasedesc{L'utente clicca sul pulsante "New Run" (o icona "+") per aprire il pannello di configurazione di un nuovo test.}
+\usecasepost{L'utente visualizza il pannello laterale per l'inserimento dei parametri del test.}
 \label{uc:uc16}
 \end{usecase}
 
-\begin{usecase}{17}{Visualizzazione attacchi riusciti}
+\begin{usecase}{17}{Inserimento nome personalizzato del test}
 \usecaseactors{Utente}
-\usecasepre{L'utente si trova nella pafina dei dettagli di un singolo test}
-\usecasedesc{L'utente visualizza gli attacchi riusciti durante il test}
-\usecasepost{L'utentre ha visualizzato gli attacchi riusciti durante il test}
+\usecasepre{L'utente ha aperto il pannello di configurazione test}
+\usecasedesc{L'utente digita un nome identificativo nel campo "Run Name" per riconoscere il test in futuro.}
+\usecasepost{Il campo viene compilato con il testo inserito dall'utente.}
 \label{uc:uc17}
 \end{usecase}
 
-\begin{usecase}{18}{Visualizzazione attacchi falliti}
+\begin{usecase}{18}{Selezione modello di valutazione}
 \usecaseactors{Utente}
-\usecasepre{L'utente si trova nella pafina dei dettagli di un singolo test}
-\usecasedesc{L'utente visualizza gli attacchi falliti durante il test}
-\usecasepost{L'utente ha visualizzato gli attacchi falliti durante il test}
+\usecasepre{L'utente ha aperto il pannello di configurazione test}
+\usecasedesc{L'utente seleziona dal menu a tendina "Scorer" il modello AI desiderato (es. nova-pro, nova-lite) per valutare le risposte.}
+\usecasepost{L'utente ha impostato il modello di scoring per il test.}
 \label{uc:uc18}
 \end{usecase}
 
-\begin{usecase}{19}{Filtrare attacchi per categoria OWASP}
+\begin{usecase}{19}{Scelta del dataset di prompt}
+\usecaseactors{Utente}
+\usecasepre{L'utente ha aperto il pannello di configurazione test}
+\usecasedesc{L'utente seleziona dal menu a tendina "Dataset" il file contenente gli scenari di attacco (es. OWASP.yaml).}
+\usecasepost{L'utente ha definito il set di dati da utilizzare.}
+\label{uc:uc19}
+\end{usecase}
+
+\begin{usecase}{20}{Selezione categorie OWASP mirate}
+\usecaseactors{Utente}
+\usecasepre{L'utente ha aperto il pannello di configurazione test}
+\usecasedesc{L'utente spunta le caselle corrispondenti alle categorie OWASP specifiche (es. 01, 05) che intende testare, escludendo le altre.}
+\usecasepost{Il test viene configurato per limitare l'analisi alle sole categorie selezionate.}
+\label{uc:uc20}
+\end{usecase}
+
+\begin{usecase}{21}{Conferma avvio test}
+\usecaseactors{Utente}
+\usecasepre{L'utente ha compilato il form di configurazione}
+\usecasedesc{L'utente clicca sul pulsante "Start Run" per confermare l'inizio dell'analisi.}
+\usecasepost{Il pannello si chiude e l'utente vede comparire una nuova riga nella tabella con stato "In Progress".}
+\label{uc:uc21}
+\end{usecase}
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/16-21.png} 
+    \caption{Use Case - UC16 to UC21}
+\end{figure}
+\FloatBarrier
+
+\begin{usecase}{22}{Annullamento test in corso}
+\usecaseactors{Utente}
+\usecasepre{L'utente ha aperto il menu azioni di un test "In Progress"}
+\usecasedesc{L'utente seleziona l'opzione "Stop Run" (se disponibile nell'interfaccia) o clicca su un pulsante dedicato per fermare il test.}
+\usecasepost{L'utente vede lo stato del test cambiare in "Canceled".}
+\label{uc:uc22}
+\end{usecase}
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/22.png} 
+    \caption{Use Case - UC22}
+\end{figure}
+\FloatBarrier
+
+\begin{usecase}{23}{Eliminazione test}
+\usecaseactors{Utente}
+\usecasepre{L'utente ha aperto il menu azioni di un test}
+\usecasedesc{L'utente seleziona l'opzione "Delete" dal menu.}
+\usecasepost{L'utente visualizza un messaggio di conferma e, dopo l'accettazione, la riga scompare dalla tabella.}
+\label{uc:uc23}
+\end{usecase}
+
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/23.png} 
+    \caption{Use Case - UC23}
+\end{figure}
+\FloatBarrier
+
+
+\begin{usecase}{24}{Accesso pagina dettagli}
+\usecaseactors{Utente}
+\usecasepre{L'utente visualizza la dashboard}
+\usecasedesc{L'utente clicca (o fa doppio click) su una riga della tabella corrispondente a un test completato.}
+\usecasepost{L'utente viene reindirizzato alla pagina di dettaglio specifica di quel test.}
+\label{uc:uc24}
+\end{usecase}
+
+\begin{usecase}{25}{Lettura grafico a torta (Score complessivo)}
+\usecaseactors{Utente}
+\usecasepre{L'utente si trova nella pagina dettagli test}
+\usecasedesc{L'utente visualizza il grafico circolare che indica la percentuale totale di attacchi bloccati con successo.}
+\usecasepost{L'utente apprende il livello generale di sicurezza rilevato dal test.}
+\label{uc:uc25}
+\end{usecase}
+
+\begin{usecase}{26}{Analisi grafico Radar (Vulnerabilità per categoria)}
+\usecaseactors{Utente}
+\usecasepre{L'utente si trova nella pagina dettagli test}
+\usecasedesc{L'utente osserva il grafico radar polare per confrontare visivamente le performance di sicurezza tra le diverse categorie OWASP.}
+\usecasepost{L'utente identifica quali aree del poligono sono più carenti (punteggio basso).}
+\label{uc:uc26}
+\end{usecase}
+
+\begin{usecase}{27}{Filtrare attacchi per categoria OWASP}
 \usecaseactors{Utente}
 \usecasepre{L'utente si trova nella pafina dei dettagli di un singolo test}
 \usecasedesc{L'utente filtra gli attacchi visualizzati in base alla categoria OWASP di appartenenza}
 \usecasepost{L'utente ha filtrato gli attacchi visualizzati in base alla categoria OWASP di appartenenza }
-\label{uc:uc19}
-\end{usecase}
-
-\figure[!h] 
-    \centering 
-    \includegraphics[width=\textwidth]{usecase/16-19.png} 
-    \caption{Use Case - UC16 to UC19}
-\end{figure}
-
-\begin{usecase}{20}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc20}
-\end{usecase}
-
-\begin{usecase}{21}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc21}
-\end{usecase}
-
-\begin{usecase}{22}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc22}
-\end{usecase}
-
-\begin{usecase}{23}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc23}
-\end{usecase}
-
-\begin{usecase}{24}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc24}
-\end{usecase}
-
-\begin{usecase}{25}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc25}
-\end{usecase}
-
-\begin{usecase}{26}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc26}
-\end{usecase}
-
-\begin{usecase}{27}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
 \label{uc:uc27}
 \end{usecase}
 
-\begin{usecase}{28}{}
+\begin{usecase}{28}{Filtro risultati per categoria (Menu a tendina)}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente si trova nella pagina dettagli test}
+\usecasedesc{L'utente utilizza il menu a tendina "Filter" per selezionare una specifica categoria OWASP (es. OWASP-03).}
+\usecasepost{La lista dei risultati sottostante mostra solo gli scambi relativi alla categoria scelta.}
 \label{uc:uc28}
 \end{usecase}
 
-\begin{usecase}{29}{}
+\begin{usecase}{29}{Filtro risultati per categoria (Bottoni rapidi)}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente si trova nella pagina dettagli test}
+\usecasedesc{L'utente clicca su uno dei bottoni laterali che riassumono le percentuali per categoria (es. pulsante "OWASP-01 80\%").}
+\usecasepost{La vista si aggiorna filtrando i dettagli per la categoria cliccata.}
 \label{uc:uc29}
 \end{usecase}
 
-\begin{usecase}{30}{}
+\begin{usecase}{30}{Espansione dettaglio risultato}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente visualizza la lista dei risultati "Passed" o "Failed"}
+\usecasedesc{L'utente clicca sulla freccia o sull'intestazione di una singola riga di risultato (card).}
+\usecasepost{La card si espande mostrando i campi nascosti (prompt completo, risposta, motivazione).}
 \label{uc:uc30}
 \end{usecase}
 
-\begin{usecase}{31}{}
+\begin{usecase}{31}{Consultazione contenuto Prompt}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente ha espanso un risultato}
+\usecasedesc{L'utente legge il testo nel campo "Prompt" per vedere quale input esatto è stato inviato al modello.}
+\usecasepost{L'utente ha preso visione del payload dell'attacco.}
 \label{uc:uc31}
 \end{usecase}
 
-\begin{usecase}{32}{}
+\begin{usecase}{32}{Consultazione contenuto Risposta}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente ha espanso un risultato}
+\usecasedesc{L'utente legge il testo nel campo "Answer" per analizzare come il modello ha reagito all'attacco.}
+\usecasepost{L'utente ha preso visione dell'output generato dall'IA.}
 \label{uc:uc32}
 \end{usecase}
 
-\begin{usecase}{33}{}
+\begin{usecase}{33}{Lettura motivazione (Rationale)}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente ha espanso un risultato}
+\usecasedesc{L'utente legge il campo "Rationale" per capire perché lo scorer ha valutato quel risultato come sicuro o insicuro.}
+\usecasepost{L'utente comprende la logica della valutazione.}
 \label{uc:uc33}
 \end{usecase}
 
-\begin{usecase}{34}{}
+\begin{usecase}{34}{Attivazione Dark Mode}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente utilizza l'applicazione}
+\usecasedesc{L'utente clicca sull'icona del sole/luna (Mode Toggle) nell'intestazione.}
+\usecasepost{L'interfaccia passa alla modalità scura per affaticare meno la vista.}
 \label{uc:uc34}
 \end{usecase}
 
-\begin{usecase}{35}{}
+\begin{usecase}{35}{Attivazione Light Mode}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente utilizza l'applicazione in Dark Mode}
+\usecasedesc{L'utente clicca nuovamente sull'icona del tema.}
+\usecasepost{L'interfaccia torna alla modalità chiara.}
 \label{uc:uc35}
 \end{usecase}
 
-\begin{usecase}{36}{}
+\begin{usecase}{36}{Navigazione alla sezione Guida}
 \usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
+\usecasepre{L'utente utilizza l'applicazione}
+\usecasedesc{L'utente clicca sulla voce di menu o icona "Help" (documento o punto interrogativo) per accedere al manuale.}
+\usecasepost{L'utente visualizza la pagina di documentazione con le istruzioni d'uso.}
 \label{uc:uc36}
-\end{usecase}
-
-\begin{usecase}{37}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc37}
-\end{usecase}
-
-\begin{usecase}{38}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc38}
-\end{usecase}
-
-\begin{usecase}{39}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc39}
-\end{usecase}
-
-\begin{usecase}{40}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc40}
-\end{usecase}
-
-\begin{usecase}{41}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc41}
-\end{usecase}
-
-\begin{usecase}{42}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc42}
-\end{usecase}
-
-\begin{usecase}{43}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc43}
-\end{usecase}
-
-\begin{usecase}{44}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc44}
-\end{usecase}
-
-\begin{usecase}{45}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc45}
-\end{usecase}
-
-\begin{usecase}{46}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc46}
-\end{usecase}
-
-\begin{usecase}{47}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc47}
-\end{usecase}
-
-\begin{usecase}{48}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc48}
-\end{usecase}
-
-\begin{usecase}{49}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc49}
-\end{usecase}
-
-\begin{usecase}{50}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc50}
-\end{usecase}
-
-\begin{usecase}{51}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc51}
-\end{usecase}
-
-\begin{usecase}{52}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc52}
-\end{usecase}
-
-\begin{usecase}{53}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc53}
-\end{usecase}
-
-\begin{usecase}{54}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc54}
-\end{usecase}
-
-\begin{usecase}{55}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc55}
-\end{usecase}
-
-\begin{usecase}{56}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc56}
-\end{usecase}
-
-\begin{usecase}{57}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc57}
-\end{usecase}
-
-\begin{usecase}{58}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc58}
-\end{usecase}
-
-\begin{usecase}{59}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc59}
-\end{usecase}
-
-\begin{usecase}{60}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc60}
-\end{usecase}
-
-\begin{usecase}{61}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc61}
-\end{usecase}
-
-\begin{usecase}{62}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc62}
-\end{usecase}
-
-\begin{usecase}{63}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc63}
-\end{usecase}
-
-\begin{usecase}{64}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc64}
-\end{usecase}
-
-\begin{usecase}{65}{}
-\usecaseactors{Utente}
-\usecasepre{Precondizione da definire}
-\usecasedesc{Descrizione da definire}
-\usecasepost{Postcondizione da definire}
-\label{uc:uc65}
 \end{usecase}
 
 \newpage
@@ -584,10 +370,13 @@ RFN-4 & L'interfaccia permette di visualizzare una tabella con i test eseguiti s
 \hline
 RFN-5 & L'interfaccia permette di visualizzare le informazioni dettagliate di un singolo test eseguito sul target di riferimento, inclusi nome, scorer, dataset, target, status, coverage ed età del test & UC5 \\
 \hline
-RFN-6 & L'interfaccia permette di visualizzare il nome assegnato a uno specifico test & UC6 \\
-\hline
 \end{tabularx}
 \end{table}%
+
+\newpage
+
+\section{Requisiti non funzionali}
+Oltre ai requisiti funzionali descritti tramite i casi d'uso, il sistema deve soddisfare una serie di requisiti non funzionali che ne determinano la qualità e i vincoli operativi.
 
 \begin{table}%
 \caption{Tabella del tracciamento dei requisiti qualitativi}
@@ -596,7 +385,19 @@ RFN-6 & L'interfaccia permette di visualizzare il nome assegnato a uno specifico
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RQD-1    & TBA & - \\
+RQD-1    & Il sistema deve presentare un'architettura modulare che consenta l'estensione delle funzionalità di testing (nuovi \emph{dataset}, nuovi \emph{scorer}) con un impatto minimo sul codice esistente. & - \\
+\hline
+RQD-2    & L'interfaccia utente della \emph{dashboard} deve essere intuitiva, permettendo la visualizzazione aggregata delle statistiche di sicurezza senza richiedere competenze tecniche avanzate. & UC1-UC4 \\
+\hline
+RQD-3    & Il sistema deve gestire in modo efficiente l'esecuzione di test su dataset di grandi dimensioni, fornendo feedback sullo stato di avanzamento. & - \\
+\hline
+RQD-4    & Il codice sorgente deve essere adeguatamente commentato e documentato per facilitare le operazioni di manutenzione futura e il passaggio di consegne ("handover") all'interno del team aziendale. & - \\
+\hline
+RQD-5    & Il sistema deve essere in grado di gestire errori imprevisti durante l'interazione con le API dei modelli di intelligenza artificiale, evitando il blocco dell'intera esecuzione e fornendo messaggi di errore chiari. & - \\
+\hline
+RQD-6    & L'applicazione deve garantire la scalabilità, permettendo l'esecuzione di più test in parallelo o l'aumento della dimensione dei dataset senza degradare significativamente le prestazioni. & - \\
+\hline
+RQD-7    & L'interfaccia utente deve essere reattiva (\emph{responsive}), adattandosi a diverse risoluzioni dello schermo per consentire l'utilizzo su dispositivi desktop e laptop. & UC1-UC36 \\
 \hline
 \end{tabularx}
 \end{table}%
@@ -608,7 +409,15 @@ RQD-1    & TBA & - \\
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RVO-1    & TBA & - \\
+RVO-1    & Il sistema deve essere sviluppato garantendo la compatibilità con le infrastrutture cloud o locali supportate dall'azienda ospitante (Var Group S.p.A.). & - \\
+\hline
+RVO-2    & Il core di testing deve implementare controlli specifici per le vulnerabilità indicate nella classifica \emph{OWASP Top 10 for LLM Applications}. & - \\
+\hline
+RVO-3    & L'applicazione web deve essere accessibile tramite i principali browser moderni (Google Chrome, Mozilla Firefox, Safari, Microsoft Edge) senza necessità di plugin esterni. & UC1 \\
+\hline
+RVO-4    & L'integrazione con i modelli di intelligenza artificiale deve avvenire tramite API standard o interfacce documentate, garantendo l'indipendenza dal singolo fornitore di LLM. & - \\
 \hline
 \end{tabularx}
 \end{table}%
+
+
