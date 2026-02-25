@@ -49,7 +49,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \begin{usecase}{5}{Visualizzazione singolo test}
 \usecaseactors{Utente}
 \usecasepre{L'utente ha selezionato un test dalla tabella dei test}
-\usecasedesc{L'utente visualizza le informazioni dettagliate di un singolo test eseguito suil target di riferimento che comprende nome, scorer, dataset, target, status, coverage ed età del test.}
+\usecasedesc{L'utente visualizza le informazioni dettagliate di un singolo test eseguito suil target di riferimento che comprende nome, \gls{scorer}\glsfirstoccur, dataset, target, status, coverage ed età del test.}
 \usecasepost{L'utente ha visualizzato le informazioni dettagliate del singolo test selezionato.}
 \label{uc:uc5}
 \end{usecase}
@@ -237,7 +237,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \label{uc:uc24}
 \end{usecase}
 
-\begin{usecase}{25}{Lettura grafico a torta (Score complessivo)}
+\begin{usecase}{25}{Visualizzazione grafico a torta}
 \usecaseactors{Utente}
 \usecasepre{L'utente si trova nella pagina dettagli test}
 \usecasedesc{L'utente visualizza il grafico circolare che indica la percentuale totale di attacchi bloccati con successo.}
@@ -245,13 +245,20 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \label{uc:uc25}
 \end{usecase}
 
-\begin{usecase}{26}{Analisi grafico Radar (Vulnerabilità per categoria)}
+\begin{usecase}{26}{Visualizzazione grafico Radar}
 \usecaseactors{Utente}
 \usecasepre{L'utente si trova nella pagina dettagli test}
 \usecasedesc{L'utente osserva il grafico radar polare per confrontare visivamente le performance di sicurezza tra le diverse categorie OWASP.}
 \usecasepost{L'utente identifica quali aree del poligono sono più carenti (punteggio basso).}
 \label{uc:uc26}
 \end{usecase}
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/24-26.png} 
+    \caption{Use Case - UC24 to UC26}
+\end{figure}
+\FloatBarrier
 
 \begin{usecase}{27}{Filtrare attacchi per categoria OWASP}
 \usecaseactors{Utente}
@@ -261,7 +268,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \label{uc:uc27}
 \end{usecase}
 
-\begin{usecase}{28}{Filtro risultati per categoria (Menu a tendina)}
+\begin{usecase}{28}{Filtro attacchi per categoria (Menu a tendina)}
 \usecaseactors{Utente}
 \usecasepre{L'utente si trova nella pagina dettagli test}
 \usecasedesc{L'utente utilizza il menu a tendina "Filter" per selezionare una specifica categoria OWASP (es. OWASP-03).}
@@ -269,13 +276,21 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \label{uc:uc28}
 \end{usecase}
 
-\begin{usecase}{29}{Filtro risultati per categoria (Bottoni rapidi)}
+\begin{usecase}{29}{Filtro attacchi per categoria (Bottoni rapidi)}
 \usecaseactors{Utente}
 \usecasepre{L'utente si trova nella pagina dettagli test}
 \usecasedesc{L'utente clicca su uno dei bottoni laterali che riassumono le percentuali per categoria (es. pulsante "OWASP-01 80\%").}
 \usecasepost{La vista si aggiorna filtrando i dettagli per la categoria cliccata.}
 \label{uc:uc29}
 \end{usecase}
+
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/27-29.png} 
+    \caption{Use Case - UC27 to UC29}
+\end{figure}
+\FloatBarrier
 
 \begin{usecase}{30}{Espansione dettaglio risultato}
 \usecaseactors{Utente}
@@ -309,6 +324,13 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \label{uc:uc33}
 \end{usecase}
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/27-29.png} 
+    \caption{Use Case - UC30 to UC33}
+\end{figure}
+\FloatBarrier
+
 \begin{usecase}{34}{Attivazione Dark Mode}
 \usecaseactors{Utente}
 \usecasepre{L'utente utilizza l'applicazione}
@@ -316,6 +338,13 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \usecasepost{L'interfaccia passa alla modalità scura per affaticare meno la vista.}
 \label{uc:uc34}
 \end{usecase}
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/34.png} 
+    \caption{Use Case - UC34}
+\end{figure}
+\FloatBarrier
 
 \begin{usecase}{35}{Attivazione Light Mode}
 \usecaseactors{Utente}
@@ -325,6 +354,13 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \label{uc:uc35}
 \end{usecase}
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/35.png} 
+    \caption{Use Case - UC35}
+\end{figure}
+\FloatBarrier
+
 \begin{usecase}{36}{Navigazione alla sezione Guida}
 \usecaseactors{Utente}
 \usecasepre{L'utente utilizza l'applicazione}
@@ -332,6 +368,13 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 \usecasepost{L'utente visualizza la pagina di documentazione con le istruzioni d'uso.}
 \label{uc:uc36}
 \end{usecase}
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=\textwidth]{usecase/36.png} 
+    \caption{Use Case - UC36}
+\end{figure}
+\FloatBarrier
 
 \newpage
 

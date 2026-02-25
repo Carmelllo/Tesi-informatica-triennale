@@ -6,7 +6,7 @@
 \section{Metodologia adottata}
 \label{sec:metodologia-adottata}
 
-Per lo svolgimento del progetto è stata adottata una metodologia \textbf{iterativo-incrementale} con \textbf{\emph{timebox} settimanale}. Il tracciamento avviene tramite un elenco di \emph{obiettivi settimanali}, derivati dalla pianificazione riportata nel Capitolo~\ref{cap:descrizione-stage} (sezione Pianificazione).
+Per lo svolgimento del progetto è stata adottata una metodologia \textbf{iterativo-incrementale} con \textbf{\gls{timebox}\glsfirstoccur settimanale}. Il tracciamento avviene tramite un elenco di \emph{obiettivi settimanali}, derivati dalla pianificazione riportata nel Capitolo~\ref{cap:descrizione-stage} (sezione Pianificazione).
 \figure[!h]
     \centering
 
@@ -16,7 +16,7 @@ Per lo svolgimento del progetto è stata adottata una metodologia \textbf{iterat
 
 \section{Introduzione al modello di sviluppo iterativo-incrementale}
 \subsection{Introduzione}
-Lo sviluppo iterativo-incrementale consiste nel miglioramento continuo del prodotto attraverso cicli ripetuti aggiungendo gradualmente nuove funzionalità a ogni ciclo. Questo approccio consente di adattarsi rapidamente ai cambiamenti dei requisiti e di integrare il \emph{feedback} degli \emph{stakeholder} in modo tempestivo, migliorando la qualità complessiva del prodotto finale.
+Lo sviluppo iterativo-incrementale consiste nel miglioramento continuo del prodotto attraverso cicli ripetuti aggiungendo gradualmente nuove funzionalità a ogni ciclo. Questo approccio consente di adattarsi rapidamente ai cambiamenti dei requisiti e di integrare il \emph{feedback} degli \gls{stakeholder}\glsfirstoccur in modo tempestivo, migliorando la qualità complessiva del prodotto finale.
 \subsection{Origine}
 Molti esempi di impiego precoce sono riportati nell'articolo di Craig Larman e Victor Basili "Iterative and Incremental Development: A Brief History" \cite{LarmanBasili2003}, tra i quali uno dei più antichi è il Project Mercury della NASA negli anni '60. Alcuni ingegneri coinvolti in Mercury formarono successivamente una divisione dentro IBM; un esempio notevole di successo nell'uso di \gls{iid}\glsfirstoccur in quel contesto fu lo sviluppo del \emph{software} avionico principale dello Space Shuttle, realizzato tra il 1977 e il 1980 tramite 17 iterazioni in 31 mesi.
 
@@ -29,7 +29,7 @@ Il modello iterativo-incrementale si articola in diverse fasi principali:
 \begin{itemize}
 \item \textbf {Inception}: identifica l'ambito del progetto, i requisiti (funzionali e non funzionali) e i rischi a un livello elevato, ma con dettagli sufficienti affinché il lavoro possa essere stimato. In questa fase si definiscono il \emph{business case}, gli \emph{stakeholder} principali, gli obiettivi di alto livello e i vincoli di progetto; si produce un \emph{backlog} iniziale e si effettuano stime di massima e una prima analisi dei rischi per decidere il \emph{go/no go}. I \emph{deliverable} tipici includono la \emph{vision}, la lista dei requisiti prioritari, il piano di progetto e il registro dei rischi.
 \item \textbf {Elaboration}: fornisce un'architettura funzionante che mitiga i principali rischi e soddisfa i requisiti non funzionali. Comprende la realizzazione di prototipi o \emph{proof of concept} per validare scelte architetturali, la definizione della \emph{baseline} tecnica e delle specifiche non funzionali (\emph{performance}, sicurezza, scalabilità). In questa fase si aggiornano stime e piani, si dettagliano i criteri di accettazione e si prepara il piano di test per garantire la fattibilità tecnica.
-\item \textbf {Construction}: riempie progressivamente l'architettura con codice pronto per la produzione, prodotto dall'analisi, progettazione, implementazione e test dei requisiti funzionali. È caratterizzata da iterazioni multiple con sviluppo incrementale, integrazione continua, test automatici e revisioni del codice; ogni iterazione produce incrementi rilasciabili, documentazione tecnica aggiornata e attività di \emph{refactoring} per mantenere la qualità del codice.
+\item \textbf {Construction}: riempie progressivamente l'architettura con codice pronto per la produzione, prodotto dall'analisi, progettazione, implementazione e test dei requisiti funzionali. È caratterizzata da iterazioni multiple con sviluppo incrementale, integrazione continua, test automatici e revisioni del codice; ogni iterazione produce incrementi rilasciabili, documentazione tecnica aggiornata e attività di \gls{refactoring}\glsfirstoccur per mantenere la qualità del codice.
 \item \textbf {Transition}: consegna il sistema nell'ambiente operativo di produzione. Include le attività di \emph{deploy} e migrazione dati, le operazioni di \emph{training} per gli utenti finali e il supporto iniziale post rilascio, il monitoraggio delle prestazioni e la raccolta dei \emph{feedback} per eventuali correzioni. I \emph{deliverable} finali comprendono la documentazione utente, la documentazione di \emph{deployment}, il registro delle \emph{issue} risolte e il verbale di \emph{acceptance/sign off}.
 \end{itemize}
 
@@ -40,9 +40,9 @@ La scelta del modello iterativo-incrementale per lo svolgimento del progetto di 
 \subsection{Confronto con altre metodologie}
 La metodologia iterativo-incrementale è stata preferita rispetto ad altre alternative per le seguenti ragioni:
 \begin{itemize}
-    \item \textbf{\emph{Waterfall}}: il modello a cascata prevede fasi sequenziali rigide (analisi, progettazione, implementazione, test, rilascio) senza possibilità di tornare indietro. Questo approccio non era adatto al progetto di \emph{stage} poiché i requisiti relativi al \emph{testing} di LLM sono in continua evoluzione e richiedono frequenti adattamenti basati sui risultati ottenuti;
-    \item \textbf{\emph{Scrum} puro}: sebbene \emph{Scrum} sia una metodologia agile molto diffusa, la sua implementazione completa (con \emph{daily standup}, \emph{Sprint} di durata fissa, ruoli definiti come \emph{Scrum Master} e \emph{Product Owner}) risultava sovradimensionata per un progetto individuale di \emph{stage}. Si è quindi optato per un approccio più snello che mantiene i principi iterativi senza l'\emph{overhead} organizzativo di \emph{Scrum};
-    \item \textbf{\emph{Kanban}}: pur essendo un metodo flessibile, \emph{Kanban} si concentra sul flusso continuo senza iterazioni definite, rendendo più difficile la pianificazione e la verifica periodica degli obiettivi con il tutor aziendale.
+    \item \textbf{\gls{waterfall}\glsfirstoccur}: il modello a cascata prevede fasi sequenziali rigide (analisi, progettazione, implementazione, test, rilascio) senza possibilità di tornare indietro. Questo approccio non era adatto al progetto di \emph{stage} poiché i requisiti relativi al \emph{testing} di LLM sono in continua evoluzione e richiedono frequenti adattamenti basati sui risultati ottenuti;
+    \item \textbf{\gls{scrum}\glsfirstoccur puro}: sebbene \emph{Scrum} sia una metodologia agile molto diffusa, la sua implementazione completa (con \emph{daily standup}, \emph{Sprint} di durata fissa, ruoli definiti come \emph{Scrum Master} e \emph{Product Owner}) risultava sovradimensionata per un progetto individuale di \emph{stage}. Si è quindi optato per un approccio più snello che mantiene i principi iterativi senza l'\emph{overhead} organizzativo di \emph{Scrum};
+    \item \textbf{\gls{kanban}\glsfirstoccur}: pur essendo un metodo flessibile, \emph{Kanban} si concentra sul flusso continuo senza iterazioni definite, rendendo più difficile la pianificazione e la verifica periodica degli obiettivi con il tutor aziendale.
 \end{itemize}
 
 \subsection{Metodologia operativa adottata}

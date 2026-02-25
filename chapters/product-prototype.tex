@@ -17,7 +17,7 @@ Di seguito viene data una panoramica delle tecnologie e strumenti presi in consi
     \item \textbf{Giskard} -- piattaforma di \emph{red teaming} automatizzato con opzioni SaaS e libreria Python.
     \item \textbf{Galileo} -- piattaforma di osservabilità con \gls{sdk}\glsfirstoccur, utile per monitoraggio ma meno orientata al \emph{security testing}.
     \item \textbf{LakeraGuard} -- suite di sicurezza commerciale per modelli, include \emph{test} come il \gls{gandalf-test}.
-    \item \textbf{Tecnologie di base} -- Python, Docker, Git/GitHub, \gls{cicd} (GitHub Actions), librerie ML (PyTorch, Hugging Face), e strumenti di \emph{logging}/\emph{monitoring}.
+    \item \textbf{Tecnologie di base} -- Python, \gls{docker}\glsfirstoccur, Git/GitHub, \gls{cicd} (GitHub Actions), librerie ML (PyTorch, Hugging Face), e strumenti di \emph{logging}/\emph{monitoring}.
 \end{itemize}
 
 Questa panoramica ha guidato la selezione degli strumenti adottati per il prototipo, privilegiando soluzioni \emph{open source} facilmente integrabili nell'ambiente di sviluppo e con funzionalità mirate al \emph{security testing} dei modelli generativi.
@@ -69,11 +69,14 @@ Di seguito viene data una panoramica delle tecnologie e strumenti utilizzati per
 \subsubsection*{Python + PyRIT}
 Python è un linguaggio di programmazione versatile e ampiamente utilizzato, particolarmente adatto per lo sviluppo di applicazioni \emph{backend}. PyRIT è uno strumento \emph{open source} progettato da Azure Microsoft per l'identificazione e la mitigazione dei rischi associati all'uso di modelli di intelligenza artificiale generativa. Insieme, Python e PyRIT forniscono un ambiente potente per lo sviluppo e la sicurezza delle applicazioni AI. DA AGGIUNGERE PERCHÉ USATO
 
+\subsubsection*{LiteLLM}
+\gls{litellm}\glsfirstoccur è una libreria Python leggera per l'interazione con modelli di linguaggio naturale. Offre un'interfaccia semplice e intuitiva per inviare richieste a modelli di linguaggio, facilitando l'integrazione di funzionalità AI nelle applicazioni. La scelta di LiteLLM è stata motivata dalla necessità di convertire le risposte dei modelli di Bedrock in formato risposta OpenAI, formato richiesto da PyRIT. LiteLLM agisce da proxy tra Bedrock e PyRIT, converte le chiamate standard OpenAI in comandi boto3 per AWS Bedrock e normalizza le risposte proprietarie di AWS Bedrock riconvertendole in formato OpenAI, rendendo l'infrastruttura sottostante invisibile a PyRIT.
+
 \subsubsection*{React}
-React è una libreria JavaScript per la creazione di interfacce utente, sviluppata da Facebook. È ampiamente utilizzata per costruire applicazioni \emph{web} dinamiche e reattive. La sua architettura basata su componenti consente agli sviluppatori di creare interfacce utente modulari e riutilizzabili, semplificando il processo di sviluppo. DA AGGIUNGERE PERCHÉ USATO
+\gls{react} è una libreria JavaScript per la creazione di interfacce utente, sviluppata da Facebook. È ampiamente utilizzata per costruire applicazioni \emph{web} dinamiche e reattive. La sua architettura basata su componenti consente agli sviluppatori di creare interfacce utente modulari e riutilizzabili, semplificando il processo di sviluppo. DA AGGIUNGERE PERCHÉ USATO
 
 \subsubsection*{MongoDB}
-MongoDB è un \emph{database} NoSQL orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati. Utilizza un modello di dati flessibile basato su BSON, che consente agli sviluppatori di archiviare e recuperare informazioni in modo efficiente. MongoDB è particolarmente adatto per applicazioni che richiedono scalabilità e prestazioni elevate. DA AGGIUNGERE PERCHÉ USATO
+\gls{mongodb}\glsfirstoccur è un \emph{database} \gls{nosql}\glsfirstoccur orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati. Utilizza un modello di dati flessibile basato su BSON, che consente agli sviluppatori di archiviare e recuperare informazioni in modo efficiente. MongoDB è particolarmente adatto per applicazioni che richiedono scalabilità e prestazioni elevate. DA AGGIUNGERE PERCHÉ USATO
 
 \section{Progettazione}
 \label{sec:progettazione}
@@ -82,10 +85,28 @@ MongoDB è un \emph{database} NoSQL orientato ai documenti, progettato per gesti
 Descrizione struttura \emph{backend} \& spiegazione infrastruttura di persistenza dei dati
 
 \subsection{Progettazione \emph{Frontend}} %**************************
-Descrizione pagine \emph{frontend}
 
+\subsubsection{Pagina "Dashboard"} 
+La "Dashboard" rappresenta il centro operativo della piattaforma, offrendo una visione d'insieme immediata dello stato dei test di sicurezza. La pagina è strutturata in diverse sezioni chiave: in alto, una serie di card statistiche (StatsCards) riepiloga le metriche fondamentali come il numero totale di esecuzioni, il modello di scoring più utilizzato, la copertura media dei test e l'attività settimanale. Al centro, un grafico interattivo (ChartAreaInteractive) visualizza l'andamento temporale dei test, permettendo di identificare trend e anomalie.
+La parte inferiore è dedicata alla gestione operativa tramite una tabella dati avanzata (DataTable) che elenca tutti i test eseguiti. Questa griglia consente operazioni di filtraggio per stato (In Progress, Done, Failed, Canceled), ricerca testuale per nome del run, ordinamento delle colonne e paginazione. Da questa pagina è possibile avviare nuovi test tramite un pannello laterale (Drawer) configurabile, eliminare run esistenti o interrompere quelli in corso. Un sistema di polling automatico garantisce che lo stato dei test in esecuzione ("In Progress") si aggiorni in tempo reale senza necessità di ricaricare la pagina.
+
+\subsubsection{Pagina "Dettaglio Run"}
+La pagina di dettaglio offre un'analisi granulare di una specifica esecuzione di test. L'intestazione riporta chiaramente l'identificativo e il nome del run, permettendo una rapida contestualizzazione.
+L'analisi dei risultati è supportata da potenti strumenti di visualizzazione: un indicatore circolare mostra la percentuale complessiva di successo (coverage), mentre un grafico radar (RadarChart) mappa le performance del modello target rispetto alle specifiche categorie di vulnerabilità OWASP, evidenziando visivamente le aree di debolezza.
+I risultati dei singoli prompt sono presentati in due liste distinte per esito ("Passed" e "Failed"). Ogni voce è espandibile e rivela un livello di dettaglio approfondito che include: il prompt di attacco inviato, la risposta generata dal modello, e il "rationale" (la motivazione) fornita dallo scorer per giustificare l'esito. È presente un sistema di filtraggio avanzato che permette di isolare i risultati per specifica categoria OWASP, facilitando l'attività di audit e debugging mirato.
+
+\subsubsection{Pagina "Help & Documentazione"}
+La pagina "Help" funge da manuale utente integrato, strutturato per guidare l'operatore nell'utilizzo della piattaforma. L'interfaccia è divisa in una barra laterale di navigazione e un'area di contenuto principale. La sidebar permette di saltare rapidamente tra le diverse sezioni tematiche: Overview, Getting Started, utilizzo della Dashboard, avvio dei test, gestione dei risultati e risoluzione dei problemi (Troubleshooting).
+Il contenuto è presentato in modo chiaro e didattico, spiegando i concetti chiave del testing OWASP per LLM e il funzionamento del framework PyRIT sottostante. Questa sezione fornisce all'utente tutte le informazioni necessarie per interpretare i risultati e configurare correttamente i parametri di test, rendendo la piattaforma accessibile anche a utenti meno esperti.}
 
 \section{\emph{Design Pattern} utilizzati}
 
 STRATEGY PER CAMBIARE AL VOLO IL TIPO DI TEST ( DATASET E SCORER PROMPT )
 
+\subsection{Pattern Strategy}
+
+
+
+\subsection{Pattern Proxy} 
+
+Il pattern Proxy è stato utilizzato per creare un'interfaccia che consente di interagire con AWS Bedrock attraverso PyRIT, convertendo le chiamate standard OpenAI in comandi boto3 e normalizzando le risposte proprietarie di AWS Bedrock in formato OpenAI. Questo approccio ha permesso di mantenere l'infrastruttura sottostante invisibile a PyRIT, facilitando l'integrazione e la compatibilità tra i due sistemi.
