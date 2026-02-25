@@ -2,8 +2,106 @@
 \label{cap:conclusioni}
 
 \section{Prodotto allo stato attuale}
+Il prodotto allo stato attuale permette il testing dei modelli di intelligenza artificiale generativa rispetto alle vulnerabilità OWASP top 10 per AI generativa.
+\subsection{Dashboard}
+L'utilizzo del prodotto è semplice e intuitivo, grazie alla dashboard web che consente di visualizzare i risultati dei test in modo chiaro e dettagliato.
+Al primo accesso l'utente viene accolto dalla dashboard che presenta una panoramica dei test eseguiti, con informazioni chiave come nome del test, target, dataset utilizzato, status, coverage e età del test.
+Da qui l'utente può avviare un test o accedere ai dettagli di ogni test, visualizzando informazioni più approfondite e i risultati specifici per ogni categoria di vulnerabilità OWASP. La dashboard offre anche grafici e visualizzazioni che facilitano l'interpretazione dei risultati, permettendo all'utente di identificare rapidamente le aree di miglioramento per i modelli testati.
+
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\textwidth]{dashboard.png} 
+    \caption{Dashboard del prodotto}
+\end{figure}
+\FloatBarrier
+\clearpage
+\subsection{Avvio del test}
+L'avvio di un test è semplice e guidato. L'utente seleziona il target di test, il dataset da utilizzare e lo scorer per valutare i risultati. Una volta avviato il test, il sistema esegue automaticamente una serie di attacchi simulati contro il modello di intelligenza artificiale generativa, analizzando le risposte del modello e identificando eventuali vulnerabilità. I risultati vengono poi visualizzati nella dashboard, consentendo all'utente di esaminare i dettagli di ogni test e di prendere decisioni informate per migliorare la sicurezza dei modelli testati. L'interfaccia è progettata per essere user-friendly, con istruzioni chiare e opzioni configurabili per adattarsi alle esigenze specifiche dell'utente e del progetto.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.7\textwidth]{newRun.png} 
+    \caption{Avvio del test}
+\end{figure}
+\FloatBarrier
+
+
+\clearpage
+\subsection{Dettagli del test}
+
+Nella sezione dettagli del test, l'utente può visualizzare informazioni specifiche sui risultati dei test, inclusi i prompt utilizzati, i payload degli attacchi e le risposte del modello. Questa sezione fornisce una visione approfondita delle vulnerabilità identificate, consentendo all'utente di comprendere meglio le debolezze del modello e di pianificare interventi correttivi mirati. La visualizzazione dei dettagli del test è fondamentale per l'analisi approfondita dei risultati e per la definizione di strategie di mitigazione efficaci.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\textwidth]{details.png} 
+    \caption{Dettagli del test}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!h] 
+    \centering 
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{esempioPassed.png}
+        \caption{Esempio test superato}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{esempioFailed.png}
+        \caption{Esempio test fallito}
+    \end{minipage}
+\end{figure}
+\FloatBarrier
+\clearpage
+
+\subsection{Pagina di documentazione}
+La pagina di documentazione fornisce all'utente tutte le informazioni necessarie per comprendere il funzionamento del sistema, le tecnologie utilizzate e le istruzioni per l'uso. Questa sezione è essenziale per garantire che gli utenti possano sfruttare appieno le funzionalità del prodotto e per facilitare la risoluzione di eventuali problemi o dubbi che potrebbero sorgere durante l'utilizzo. La documentazione è strutturata in modo chiaro e accessibile, con sezioni dedicate a diversi aspetti del sistema, come l'architettura, le funzionalità principali e le best practice per l'utilizzo efficace del prodotto.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.9\textwidth]{documentation.png} 
+    \caption{Pagina di documentazione}
+\end{figure}
+\FloatBarrier
+\clearpage
 
 \section{Stato dei requisiti}
+Di seguito viene riportata una tabella riassuntiva dello stato di soddisfacimento dei requisiti al termine del progetto di stage.
+
+\begin{table}[htbp]
+\centering
+\caption{Stato di soddisfacimento dei requisiti al termine dello stage}
+\label{tab:stato-requisiti}
+\begin{tabularx}{\textwidth}{lXc}
+\hline\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Soddisfatto}\\
+\hline
+RFN-1 & Visualizzazione dashboard principale con statistiche dei test & Sì \\
+RFN-2 & Visualizzazione card con statistiche aggregate dei test & Sì \\
+RFN-3 & Visualizzazione grafico temporale andamento test & Sì \\
+RFN-4 & Visualizzazione tabella test eseguiti sui target & Sì \\
+RFN-5 & Visualizzazione dettagli singolo test (nome, scorer, dataset, target, status, coverage, età) & Sì \\
+\hline
+RQD-1 & Architettura modulare per estensione funzionalità (nuovi dataset, nuovi scorer) & Sì \\
+RQD-2 & Interfaccia dashboard intuitiva senza competenze tecniche avanzate & Sì \\
+RQD-3 & Gestione efficiente dataset di grandi dimensioni con feedback avanzamento & Sì \\
+RQD-4 & Codice commentato e documentato per manutenzione e handover & Sì \\
+RQD-5 & Gestione errori imprevisti API con messaggi chiari & Sì \\
+RQD-6 & Scalabilità per test paralleli e dataset grandi & Parziale \\
+RQD-7 & Interfaccia responsive per desktop e laptop & Sì \\
+\hline
+RVO-1 & Compatibilità con infrastrutture cloud/locali Var Group & Sì \\
+RVO-2 & Controlli per vulnerabilità OWASP Top 10 for LLM & Sì \\
+RVO-3 & Accessibilità tramite browser moderni senza plugin & Sì \\
+RVO-4 & Integrazione modelli AI tramite API standard & Sì \\
+\hline\hline
+\end{tabularx}
+\end{table}
+
+Come evidenziato dalla tabella, la maggior parte dei requisiti è stata soddisfatta. L'unico requisito parzialmente soddisfatto riguarda la scalabilità per l'esecuzione di test in parallelo (RQD-6), funzionalità che richiederebbe ulteriore sviluppo per essere completamente implementata.
+\clearpage
 
 \section{Valutazione personale}
 In conclusione il progetto di Stage mi ha permesso di acquisire competenze specifiche su strumenti e tecnologie all'avanguardia utilizzati nel mondo del lavoro.
