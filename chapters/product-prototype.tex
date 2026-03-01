@@ -32,29 +32,78 @@ Durante le prime due settimane di \emph{stage} è stato condotto uno studio prel
     \includegraphics[width=1.0\columnwidth]{matrix.png}
     \caption{Matrice di Valutazione degli Strumenti Analizzati}
 \end{figure}
-
+\clearpage
 \subsubsection*{PromptFoo}
 PromptFoo è una piattaforma di \emph{testing} per modelli di linguaggio che consente agli sviluppatori di creare, eseguire e gestire \emph{test} automatizzati per valutare le prestazioni, l'affidabilità e la sicurezza dei loro modelli di linguaggio naturale. Offre funzionalità come la creazione di casi di \emph{test} personalizzati, l'integrazione con \emph{pipeline} \gls{cicd} e \emph{report} dettagliati sui risultati dei \emph{test}.
 Questo \emph{tool} è stato tenuto in molta considerazione in quanto offre funzionalità specifiche per il \emph{testing} delle vulnerabilità OWASP \emph{top} 10 per AI generativa, obiettivo principale del progetto di \emph{stage}.
 
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{promptfoo.png} 
+    \caption{PromptFoo: AI Security Testing Platform}
+\end{figure}
+\FloatBarrier
+
 \subsubsection*{PyRIT}
 PyRIT è uno \emph{tool open source} progettato da Azure Microsoft per l'identificazione e la mitigazione dei rischi associati all'uso di modelli di intelligenza artificiale generativa. PyRIT è stato creato per valutare modelli di AI per potenziali vulnerabilità di sicurezza, \emph{bias} e problemi di \emph{compliance}, fornendo raccomandazioni su come migliorare la sicurezza e l'affidabilità dei modelli.\\
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{pyrit.png} 
+    \caption{PyRIT: Python Risk Identification Toolkit}
+\end{figure}
+\FloatBarrier
 
 \subsubsection*{LangFuse}
 LangFuse è una piattaforma \emph{open source} per la valutazione e l'osservazione delle applicazioni che utilizzano intelligenza artificiale generativa. La piattaforma è integrata con diversi modelli di linguaggio naturale e permette l'utilizzo tramite \emph{cloud} o in \emph{self host}. Langfuse offre inoltre un LLM \emph{playground} per testare i modelli che aveva catturato la mia attenzione all'inizio del progetto. Tuttavia il \emph{tool} non offre una vera e propria funzionalità di \emph{security testing}, \emph{focus} del progetto di \emph{stage}.
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{langfuse.png} 
+    \caption{LangFuse: LLM Observability Platform}
+\end{figure}
+\FloatBarrier
+
 \subsubsection*{DeepEval / DeepTeam}
 DeepEval è un \emph{framework open source} per la valutazione e il \emph{benchmarking} dei modelli di intelligenza artificiale generativa. DeepEval non fornisce funzionalità specifiche per il \emph{testing} dei modelli. Per ovviare a questa mancanza è stato creato un \emph{tool} di \emph{testing} basato su DeepEval chiamato DeepTeam, un \emph{tool} di \emph{red teaming}. Tuttavia, DeepTeam non ha un \emph{focus} sulle vulnerabilità OWASP in quanto si concentra sul \emph{testing} delle \emph{safety guidelines}.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{deepeval.png} 
+    \caption{DeepEval / DeepTeam: LLM Evaluation Framework}
+\end{figure}
+\FloatBarrier
 
 \subsubsection*{Garak}
 Garak è uno \emph{scanner} di vulnerabilità per modelli di intelligenza artificiale generativa \emph{open source} creato da NVIDIA per facilitare il \emph{testing} dei modelli. Il \emph{focus} di Garak sta nei metodi di attacco specifici per far fallire in modo imprevisto una LLM o un sistema di dialogo. Garak testa diverse vulnerabilità tra cui allucinazioni, \emph{data leakage}, \emph{prompt injection}, \emph{jailbreak} ecc.
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{garak.png} 
+    \caption{Garak: LLM Vulnerability Scanner}
+\end{figure}
+\FloatBarrier
+
 \subsubsection*{Giskard}
 Giskard è una piattaforma di \emph{red teaming} automatizzato per testare, valutare ed analizzare modelli di intelligenza artificiale generativa. Esistono due metodi di utilizzo di Giskard: Come servizio HUB a pagamento o come libreria Python \emph{open source} da installare localmente. La libreria fornita è però fortemente limitata nelle funzionalità rispetto al servizio HUB in quanto incentrata sulla ricerca.
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{giskard.png} 
+    \caption{Giskard: Automated Red Teaming Platform}
+\end{figure}
+\FloatBarrier
+
 \subsubsection*{Galileo}
 Galileo è una piattaforma che permette la valutazione e osservazione di applicazioni basate su AI generativa. Galileo offre SDK in Python e TypeScript per integrarlo direttamente nei propri progetti. Galileo è molto flessibile per quanto riguarda il \emph{deploy} e viene utilizzato da molte aziende di rilievo. Nonostante ciò la piattaforma non offre funzionalità specifiche per il \emph{security testing}, \emph{focus} di questo progetto, ed è a pagamento.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{galielo.png} 
+    \caption{Galileo: AI Observability Platform}
+\end{figure}
+\FloatBarrier
 
 \subsubsection*{LakeraGuard}
 LakeraGuard è una piattaforma di sicurezza per modelli di intelligenza artificiale che aiuta gli sviluppatori a proteggere i loro modelli da minacce e vulnerabilità. Offre funzionalità come la scansione delle vulnerabilità, la gestione delle \emph{patch} e il monitoraggio delle minacce in tempo reale.\\
@@ -62,21 +111,61 @@ Essendo l'azienda svizzera Lakera la creatrice del \gls{gandalf-test}, \emph{foc
 Tuttavia il \emph{tool out of the box} fa già quello che lo \emph{stage} chiede di implementare quindi non ha suscitato uno studio approfondito in quanto avrebbe reso superfluo lo sviluppo del prototipo.\\
 Inoltre è un \emph{tool} a pagamento che offre un \emph{tier} gratuito il quale è però limitato a 10000~richieste \gls{api}\glsfirstoccur al mese, limite che avrebbe reso difficile l'utilizzo futuro del \emph{tool}.
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.3\textwidth]{lakeraguard.png} 
+    \caption{LakeraGuard: AI Security Platform}
+\end{figure}
+\FloatBarrier
+
 
 \subsection{Strumenti utilizzati}
 Di seguito viene data una panoramica delle tecnologie e strumenti utilizzati per lo sviluppo del prototipo.
 
 \subsubsection*{Python + PyRIT}
-Python è un linguaggio di programmazione versatile e ampiamente utilizzato, particolarmente adatto per lo sviluppo di applicazioni \emph{backend}. PyRIT è uno strumento \emph{open source} progettato da Azure Microsoft per l'identificazione e la mitigazione dei rischi associati all'uso di modelli di intelligenza artificiale generativa. Insieme, Python e PyRIT forniscono un ambiente potente per lo sviluppo e la sicurezza delle applicazioni AI. DA AGGIUNGERE PERCHÉ USATO
+Python è un linguaggio di programmazione versatile e ampiamente utilizzato, particolarmente adatto per lo sviluppo di applicazioni \emph{backend}. PyRIT è uno strumento \emph{open source} progettato da Azure Microsoft per l'identificazione e la mitigazione dei rischi associati all'uso di modelli di intelligenza artificiale generativa. Insieme, Python e PyRIT forniscono un ambiente potente per lo sviluppo e la sicurezza delle applicazioni AI. La scelta di Python é stata direttamente influenzata dalla mia scelta di Pyrit come framework di \emph{testing} in quanto PyRIT è scritto in Python.
+ La scelta di Pyrit é avvenuta dopo numerosi confronti con le altre tecnologie di \emph{security testing} per AI generativa, ed é stata influenzata dalla sua natura \emph{open source}, dalla ricchezza della documentazione e soprattutto dalla grande personalizzazione che offre, che mi ha permesso di adattarlo alle esigenze specifiche del progetto di \emph{stage}. Sono in oltre disponibili online numerosi video spiegazione sull'utlizzo di PyRIT per il red teaming in ambito professionale che mi hanno aiutato a comprendere meglio il funzionamento del framework e a sfruttarne al meglio le potenzialità.
+ Inoltre essendo il team dietro PyRIT molto appassionato al progetto, in particolare Roman Lutz, uno dei contributori principali del progetto e Responsible AI Engineering Lead di Microsoft, é stato possibile interagire direttamente con gli sviluppatori tramite GitHub e discord per chiarire dubbi e ricevere consigli sull'utilizzo del framework, rendendo l'esperienza di sviluppo molto più fluida e produttiva.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\textwidth]{pyrit_python.png} 
+    \caption{Python + PyRIT: Backend Development and AI Risk Identification}
+\end{figure}
+\FloatBarrier
 
 \subsubsection*{LiteLLM}
 \gls{litellm}\glsfirstoccur è una libreria Python leggera per l'interazione con modelli di linguaggio naturale. Offre un'interfaccia semplice e intuitiva per inviare richieste a modelli di linguaggio, facilitando l'integrazione di funzionalità AI nelle applicazioni. La scelta di LiteLLM è stata motivata dalla necessità di convertire le risposte dei modelli di Bedrock in formato risposta OpenAI, formato richiesto da PyRIT. LiteLLM agisce da proxy tra Bedrock e PyRIT, converte le chiamate standard OpenAI in comandi boto3 per AWS Bedrock e normalizza le risposte proprietarie di AWS Bedrock riconvertendole in formato OpenAI, rendendo l'infrastruttura sottostante invisibile a PyRIT.
 
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\textwidth]{litellm.png} 
+    \caption{LiteLLM: Python Library for LLM Interactions}
+\end{figure}
+\FloatBarrier
+
 \subsubsection*{React}
-\gls{react} è una libreria JavaScript per la creazione di interfacce utente, sviluppata da Facebook. È ampiamente utilizzata per costruire applicazioni \emph{web} dinamiche e reattive. La sua architettura basata su componenti consente agli sviluppatori di creare interfacce utente modulari e riutilizzabili, semplificando il processo di sviluppo. DA AGGIUNGERE PERCHÉ USATO
+\gls{react} è una libreria JavaScript per la creazione di interfacce utente, sviluppata da Facebook. È ampiamente utilizzata per costruire applicazioni \emph{web} dinamiche e reattive. La sua architettura basata su componenti consente agli sviluppatori di creare interfacce utente modulari e riutilizzabili, semplificando il processo di sviluppo.
+La scelta di React come framework per lo sviluppo della dashboard è stata motivata dalla sua popolarità e dalla sua capacità di creare interfacce utente dinamiche e reattive, caratteristiche fondamentali per una dashboard che deve visualizzare in tempo reale i risultati dei test di sicurezza. Inoltre, React viene utilizzato regolarmente da Var Group nei suoi progetti, quindi la scelta di React ha facilitato l'integrazione del prototipo con le tecnologie già in uso all'interno dell'azienda e ha reso più semplice per il team di sviluppo di Var Group contribuire al progetto e aiutarmi in caso di necessità nell'uso stesso del framework. React offre anche una vasta gamma di librerie e strumenti che possono essere utilizzati per migliorare l'esperienza utente e la funzionalità della dashboard, rendendolo una scelta ideale per questo progetto.
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\textwidth]{react.png} 
+    \caption{React: JavaScript Library for UI Development}
+\end{figure}
+\FloatBarrier
 
 \subsubsection*{MongoDB}
 \gls{mongodb}\glsfirstoccur è un \emph{database} \gls{nosql}\glsfirstoccur orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati. Utilizza un modello di dati flessibile basato su BSON, che consente agli sviluppatori di archiviare e recuperare informazioni in modo efficiente. MongoDB è particolarmente adatto per applicazioni che richiedono scalabilità e prestazioni elevate. DA AGGIUNGERE PERCHÉ USATO
+
+
+\begin{figure}[!h] 
+    \centering 
+    \includegraphics[width=0.5\textwidth]{mongo.png} 
+    \caption{MongoDB: NoSQL Document Database}
+\end{figure}
+\FloatBarrier
+
 
 \section{Progettazione}
 \label{sec:progettazione}
