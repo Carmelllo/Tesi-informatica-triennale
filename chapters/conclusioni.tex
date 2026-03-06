@@ -7,18 +7,19 @@ Il prodotto sviluppato durante il progetto di stage ha raggiunto gli obiettivi p
 Il sistema è stato valutato positivamente dal tutor aziendale e dal team di sviluppo di Var Group, che hanno apprezzato in particolare la modularità dell'architettura, la quale consente di estendere facilmente le funzionalità di \emph{testing} con nuovi \emph{dataset} e \emph{scorer} senza modifiche sostanziali al codice esistente. La \emph{dashboard} web sviluppata permette agli utenti di eseguire test in modo autonomo e di interpretare i risultati senza necessità di competenze tecniche avanzate, rispondendo così alle esigenze di accessibilità richieste dall'azienda.
 \clearpage
 \subsection{Login}
-L'accesso alla dashboard è protetto da un sistema di autenticazione basato su credenziali username e password, che limita l'utilizzo del prodotto ai soli utenti autorizzati. L'implementazione adotta le pratiche consolidate in materia di sicurezza informatica, al fine di tutelare i dati degli utenti e impedire accessi non autorizzati.
+L'accesso alla dashboard è protetto da un sistema di autenticazione basato su credenziali username e password come visto in Fig.~\ref{fig:login}, che limita l'utilizzo del prodotto ai soli utenti autorizzati. L'implementazione adotta le pratiche consolidate in materia di sicurezza informatica, al fine di tutelare i dati degli utenti e impedire accessi non autorizzati.
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.7\textwidth]{login.png} 
     \caption{Login alla dashboard}
+    \label{fig:login}
 \end{figure}
 \FloatBarrier
 \clearpage
 
 \subsection{Dashboard}
-La dashboard web consente di visualizzare i risultati dei test in modo chiaro e dettagliato.
+La dashboard web consente di visualizzare i risultati dei test in modo chiaro e dettagliato come visto in Fig.~\ref{fig:dashboard}.
 Al primo accesso l'utente visualizza la dashboard che presenta una panoramica dei test eseguiti, con informazioni chiave come nome del test, target, dataset utilizzato, status, coverage e età del test.
 Da qui l'utente può avviare un test o accedere ai dettagli di ogni test, visualizzando informazioni più approfondite e i risultati specifici per ogni categoria di vulnerabilità OWASP. La dashboard offre anche grafici e visualizzazioni che facilitano l'interpretazione dei risultati, permettendo all'utente di identificare rapidamente le aree di miglioramento per i modelli testati.
 
@@ -27,29 +28,34 @@ Da qui l'utente può avviare un test o accedere ai dettagli di ogni test, visual
     \centering 
     \includegraphics[width=1\textwidth]{dashboard.png} 
     \caption{Dashboard del prodotto}
+    \label{fig:dashboard}
 \end{figure}
 \FloatBarrier
 \clearpage
 \subsection{Avvio del test}
-L'avvio di un test è semplice e guidato. L'utente seleziona il target di test, il dataset da utilizzare e lo scorer per valutare i risultati. Una volta avviato il test, il sistema esegue automaticamente una serie di attacchi simulati contro il modello di intelligenza artificiale generativa, analizzando le risposte del modello e identificando eventuali vulnerabilità. I risultati vengono poi visualizzati nella dashboard, consentendo all'utente di esaminare i dettagli di ogni test e di prendere decisioni informate per migliorare la sicurezza dei modelli testati. L'interfaccia è progettata per essere user-friendly, con istruzioni chiare e opzioni configurabili per adattarsi alle esigenze specifiche dell'utente e del progetto.
+L'avvio di un test è semplice e guidato (Fig.~\ref{fig:newRun}). L'utente seleziona il target di test, il dataset da utilizzare e lo scorer per valutare i risultati. Una volta avviato il test, il sistema esegue automaticamente una serie di attacchi simulati contro il modello di intelligenza artificiale generativa, analizzando le risposte del modello e identificando eventuali vulnerabilità. I risultati vengono poi visualizzati nella dashboard, consentendo all'utente di esaminare i dettagli di ogni test e di prendere decisioni informate per migliorare la sicurezza dei modelli testati. L'interfaccia è progettata per essere user-friendly, con istruzioni chiare e opzioni configurabili per adattarsi alle esigenze specifiche dell'utente e del progetto.
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.7\textwidth]{newRun.png} 
     \caption{Avvio del test}
+    \label{fig:newRun}
+\end{figure}
+\FloatBarrier
 \end{figure}
 \FloatBarrier
 
-
-\clearpage
 \subsection{Dettagli del test}
 
-Nella sezione dettagli del test, l'utente può visualizzare informazioni specifiche sui risultati dei test, inclusi i prompt utilizzati, i payload degli attacchi e le risposte del modello. Questa sezione fornisce una visione approfondita delle vulnerabilità identificate, consentendo all'utente di comprendere meglio le debolezze del modello e di pianificare interventi correttivi mirati. La visualizzazione dei dettagli del test è fondamentale per l'analisi approfondita dei risultati e per la definizione di strategie di mitigazione efficaci.
+Nella sezione dettagli del test, l'utente può visualizzare informazioni specifiche sui risultati dei test, inclusi i prompt utilizzati, i payload degli attacchi e le risposte del modello come in Fig.~\ref{fig:details}. Questa sezione fornisce una visione approfondita delle vulnerabilità identificate, consentendo all'utente di comprendere meglio le debolezze del modello e di pianificare interventi correttivi mirati. La visualizzazione dei dettagli del test è fondamentale per l'analisi approfondita dei risultati e per la definizione di strategie di mitigazione efficaci. Esempi di test superato e test fallito sono mostrati rispettivamente in Fig.~\ref{fig:esempioPassed} e Fig.~\ref{fig:esempioFailed}.
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=1\textwidth]{details.png} 
     \caption{Dettagli del test}
+    \label{fig:details}
+\end{figure}
+\FloatBarrier
 \end{figure}
 \FloatBarrier
 
@@ -59,24 +65,30 @@ Nella sezione dettagli del test, l'utente può visualizzare informazioni specifi
         \centering
         \includegraphics[width=\textwidth]{esempioPassed.png}
         \caption{Esempio test superato}
+        \label{fig:esempioPassed}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{esempioFailed.png}
         \caption{Esempio test fallito}
+        \label{fig:esempioFailed}
     \end{minipage}
 \end{figure}
 \FloatBarrier
 \clearpage
 
 \subsection{Pagina di documentazione}
-La pagina di documentazione fornisce all'utente tutte le informazioni necessarie per comprendere il funzionamento del sistema, le tecnologie utilizzate e le istruzioni per l'uso. Questa sezione è essenziale per garantire che gli utenti possano sfruttare appieno le funzionalità del prodotto e per facilitare la risoluzione di eventuali problemi o dubbi che potrebbero sorgere durante l'utilizzo. La documentazione è strutturata in modo chiaro e accessibile, con sezioni dedicate a diversi aspetti del sistema, come l'architettura, le funzionalità principali e le best practice per l'utilizzo efficace del prodotto.
+La pagina di documentazione (Fig.~\ref{fig:documentation}) fornisce all'utente tutte le informazioni necessarie per comprendere il funzionamento del sistema, le tecnologie utilizzate e le istruzioni per l'uso. Questa sezione è essenziale per garantire che gli utenti possano sfruttare appieno le funzionalità del prodotto e per facilitare la risoluzione di eventuali problemi o dubbi che potrebbero sorgere durante l'utilizzo. La documentazione è strutturata in modo chiaro e accessibile, con sezioni dedicate a diversi aspetti del sistema, come l'architettura, le funzionalità principali e le best practice per l'utilizzo efficace del prodotto.
 
 \begin{figure}[!h] 
     \centering 
     \includegraphics[width=0.9\textwidth]{documentation.png} 
     \caption{Pagina di documentazione}
+    \label{fig:documentation}
+\end{figure}
+\FloatBarrier
+\clearpage
 \end{figure}
 \FloatBarrier
 \clearpage

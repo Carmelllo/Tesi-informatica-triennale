@@ -23,7 +23,7 @@ Di seguito viene data una panoramica delle tecnologie e strumenti presi in consi
 Questa panoramica ha guidato la selezione degli strumenti adottati per il prototipo, privilegiando soluzioni \emph{open source} facilmente integrabili nell'ambiente di sviluppo e con funzionalità mirate al \emph{security testing} dei modelli generativi.
 
 \subsection{Strumenti analizzati}
-Durante le prime due settimane di \emph{stage} è stato condotto uno studio preliminare su diversi strumenti di \emph{security testing} per AI generativa. Di seguito viene fornita la matrice di valutazione dei \emph{tool} e una breve descrizione di ciascuno strumento analizzato.
+Durante le prime due settimane di \emph{stage} è stato condotto uno studio preliminare su diversi strumenti di \emph{security testing} per AI generativa. Di seguito viene fornita la matrice di valutazione (Fig. ~\ref{fig:matrice-valutazione}) dei \emph{tool} e una breve descrizione di ciascuno strumento analizzato.
 
 \begin{figure}[!h]
     \centering
@@ -31,8 +31,9 @@ Durante le prime due settimane di \emph{stage} è stato condotto uno studio prel
     % the images/ folder, so here we only pass the filename
     \includegraphics[width=1.0\columnwidth]{matrix.png}
     \caption{Matrice di Valutazione degli Strumenti Analizzati}
+    \label{fig:matrice-valutazione}
 \end{figure}
-\clearpage
+
 \subsubsection*{PromptFoo}
 PromptFoo è una piattaforma di \emph{testing} per modelli di linguaggio che consente agli sviluppatori di creare, eseguire e gestire \emph{test} automatizzati per valutare le prestazioni, l'affidabilità e la sicurezza dei loro modelli di linguaggio naturale. Offre funzionalità come la creazione di casi di \emph{test} personalizzati, l'integrazione con \emph{pipeline} \gls{cicd} e \emph{report} dettagliati sui risultati dei \emph{test}.
 Questo \emph{tool} è stato tenuto in molta considerazione in quanto offre funzionalità specifiche per il \emph{testing} delle vulnerabilità OWASP \emph{top} 10 per AI generativa, obiettivo principale del progetto di \emph{stage}.
@@ -156,7 +157,9 @@ La scelta di React come framework per lo sviluppo della dashboard è stata motiv
 \FloatBarrier
 
 \subsubsection*{MongoDB}
-\gls{mongodb}\glsfirstoccur è un \emph{database} \gls{nosql}\glsfirstoccur orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati. Utilizza un modello di dati flessibile basato su BSON, che consente agli sviluppatori di archiviare e recuperare informazioni in modo efficiente. MongoDB è particolarmente adatto per applicazioni che richiedono scalabilità e prestazioni elevate. DA AGGIUNGERE PERCHÉ USATO
+\gls{mongodb}\glsfirstoccur è un \emph{database} \gls{nosql}\glsfirstoccur orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati. Utilizza un modello di dati flessibile basato su BSON, che consente agli sviluppatori di archiviare e recuperare informazioni in modo efficiente. MongoDB è particolarmente adatto per applicazioni che richiedono scalabilità e prestazioni elevate.
+Ho deciso di utilizzare MongoDB come sistema di persistenza per i risultati dei testi di sicurezza poiche il formato in cui pyrit salva localmente i risultati delle conversazioni è un formato JSON, formato nativo di MongoDB, rendendo quindi l'integrazione tra i due sistemi molto semplice e diretta. Inoltre MongoDB offre una grande flessibilità nella gestione dei dati, permettendo di adattare facilmente la struttura del database alle esigenze specifiche del progetto e di scalare in modo efficiente. 
+In oltre mi permette di dividere le varie conversazioni in base alla categoria di vulnerabilità OWASP a cui si riferiscono, rendendo più semplice l'organizzazione e la visualizzazione dei risultati nella dashboard.
 
 
 \begin{figure}[!h] 
@@ -357,7 +360,7 @@ L'architettura del sistema fa ricorso a diversi \emph{design pattern} consolidat
 
 \subsection{Proxy}
 
-Il pattern \emph{Proxy} costituisce il cardine dell'infrastruttura di comunicazione con i modelli di linguaggio. L'applicazione non interagisce mai direttamente con Amazon Bedrock: tutte le chiamate sono mediate dal servizio \gls{litellm}, un \emph{proxy} intermedio definito nel file \texttt{docker-compose.yml}.
+Il pattern \emph{Proxy} (Fig. ~\ref{fig:proxy}) costituisce il cardine dell'infrastruttura di comunicazione con i modelli di linguaggio. L'applicazione non interagisce mai direttamente con Amazon Bedrock: tutte le chiamate sono mediate dal servizio \gls{litellm}, un \emph{proxy} intermedio definito nel file \texttt{docker-compose.yml}.
 
 Il \emph{proxy} riceve richieste formattate secondo lo standard dell'API OpenAI --- il formato nativo atteso da PyRIT --- le traduce nel protocollo proprietario di Amazon Bedrock e gestisce autonomamente l'autenticazione AWS. Il codice applicativo punta all'endpoint locale del \emph{proxy} come se fosse un qualsiasi servizio OpenAI-compatibile, ignorando del tutto il \emph{provider} reale del modello.
 
@@ -367,11 +370,12 @@ Il vantaggio architetturale è rilevante: qualora il \emph{provider} di inferenz
     \centering
     \includegraphics[width=0.8\columnwidth]{proxy.png}
     \caption{Diagramma del Pattern Proxy}
+    \label{fig:proxy}
 \end{figure}
 
 \subsection{Strategy}
 
-Il pattern \emph{Strategy} è presente a due livelli distinti del sistema.
+Il pattern \emph{Strategy} (Fig. ~\ref{fig:strategy}) è presente a due livelli distinti del sistema.
 
 \paragraph{Intercambiabilità degli scorer.}
 Il modello LLM utilizzato come giudice per la valutazione delle risposte non è fisso, ma parametrico: l'utente lo seleziona dal \emph{frontend} e la funzione \texttt{test()} lo riceve come argomento, configurando di conseguenza il \emph{target} di valutazione. La classe \texttt{SelfAskGeneralTrueFalseScorer} accetta qualsiasi \texttt{chat\_target} conforme all'interfaccia \texttt{OpenAIChatTarget}: sostituendo l'istanza, l'intera strategia di \emph{scoring} cambia senza modificare la logica di orchestrazione.
@@ -383,11 +387,12 @@ La classe \texttt{PromptSendingAttack} è costruita componendo due strategie ind
     \centering
     \includegraphics[width=0.8\columnwidth]{strategy.png}
     \caption{Diagramma del Pattern Strategy}
+    \label{fig:strategy}
 \end{figure}
 \clearpage
 \subsection{Singleton}
 
-Il \emph{framework} PyRIT adotta il pattern \emph{Singleton} per la gestione della memoria di conversazione. La classe \texttt{CentralMemory} garantisce l'esistenza di una sola istanza del sottosistema di memoria nel ciclo di vita del processo, evitando inconsistenze nei dati di tracciamento tra le diverse componenti (target, scorer, esecutore).
+Il \emph{framework} PyRIT adotta il pattern \emph{Singleton} (Fig. ~\ref{fig:singleton}) per la gestione della memoria di conversazione. La classe \texttt{CentralMemory} garantisce l'esistenza di una sola istanza del sottosistema di memoria nel ciclo di vita del processo, evitando inconsistenze nei dati di tracciamento tra le diverse componenti (target, scorer, esecutore).
 
 Nel codice del \emph{tester}, l'istanza viene inizializzata una volta sola all'avvio dell'esecuzione e resa disponibile globalmente a tutte le componenti PyRIT che ne necessitino, senza passaggio esplicito del parametro. Poiché ogni test è eseguito in un processo separato tramite \texttt{multiprocessing.Process}, ogni processo dispone di un proprio \emph{Singleton} indipendente, escludendo conflitti di concorrenza.
 
@@ -395,4 +400,5 @@ Nel codice del \emph{tester}, l'istanza viene inizializzata una volta sola all'a
     \centering
     \includegraphics[width=0.6\columnwidth]{singleton.png}
     \caption{Diagramma del Pattern Singleton}
+    \label{fig:singleton}
 \end{figure}
